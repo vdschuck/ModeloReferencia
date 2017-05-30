@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Dapper;
 using ModeloDeReferencia.DTO;
+using Dapper;
 
 namespace ModeloDeReferencia.DAL
 {
-    public class CategoriaDAL : MyConnection, ICategoriaDAL
+    public class NivelMaturidadeDAL : MyConnection, INivelMaturidadeDAL
     {
         public int Delete(int Id)
         {
@@ -17,70 +17,69 @@ namespace ModeloDeReferencia.DAL
 
             using (var con = OpenConnection())
             {
-                var query = @"DELETE FROM categoria WHERE id = @ID";
+                var query = @"DELETE FROM nivel_maturidade WHERE id = @ID";
                 var parameter = new { ID = Id };
 
                 result = con.Execute(query.ToString(), parameter);
                 con.Dispose();
             }
-            
-            return result;            
+
+            return result;
         }
 
-        public IEnumerable<Categoria> GetAll()
+        public IEnumerable<NivelMaturidade> GetAll()
         {
-            IEnumerable<Categoria> result = null;
+            IEnumerable<NivelMaturidade> result = null;
 
             using (var con = OpenConnection())
             {
-                result = con.Query<Categoria>("SELECT * FROM categoria").ToList();
+                result = con.Query<NivelMaturidade>("SELECT * FROM nivel_maturidade").ToList();
                 con.Dispose();
             }
 
             return result;
         }
 
-        public Categoria GetById(int Id)
+        public NivelMaturidade GetById(int Id)
         {
-            Categoria result = null;
+            NivelMaturidade result = null;
 
             using (var con = OpenConnection())
             {
-                var query = @"SELECT * FROM categoria WHERE id = @ID";
+                var query = @"SELECT * FROM nivel_maturidade WHERE id = @ID";
                 var parameter = new { ID = Id };
 
-                result = con.QueryFirstOrDefault<Categoria>(query, parameter);
+                result = con.QueryFirstOrDefault<NivelMaturidade>(query, parameter);
                 con.Dispose();
             }
 
             return result;
         }
 
-        public int Insert(Categoria categoria)
+        public int Insert(NivelMaturidade nivelMaturidade)
         {
             var result = 0;
 
             using (var con = OpenConnection())
             {
-                var query = @"INSERT INTO categoria(nome) VALUES(@NOME)";
-                var parameter = new { NOME = categoria.Nome };
+                var query = @"INSERT INTO nivel_maturidade(nome, sigla, descricao) VALUES(@NOME, @SIGLA, @DESCRICAO)";
+                var parameter = new { NOME = nivelMaturidade.Nome, SIGLA = nivelMaturidade.Sigla, DESCRICAO = nivelMaturidade.Descricao };
 
                 result = con.Execute(query, parameter);
                 con.Dispose();
             }
 
             return result;
-            
         }
 
-        public int Update(Categoria categoria)
+        public int Update(NivelMaturidade nivelMaturidade)
         {
             var result = 0;
 
             using (var con = OpenConnection())
             {
-                var query = @"UPDATE categoria SET nome = @NOME WHERE id = @ID";
-                var parameter = new { NOME = categoria.Nome, ID = categoria.Id };
+                var query = @"UPDATE nivel_maturidade SET nome = @NOME, descricao = @DESCRICAO, sigla = @SIGLA WHERE id = @ID";
+                var parameter = new { NOME = nivelMaturidade.Nome, ID = nivelMaturidade.Id, SIGLA = nivelMaturidade.Sigla, DESCRICAO = nivelMaturidade.Descricao};
 
                 result = con.Execute(query, parameter);
                 con.Dispose();

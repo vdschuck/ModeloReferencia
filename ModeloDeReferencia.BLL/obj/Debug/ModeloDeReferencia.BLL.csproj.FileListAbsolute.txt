@@ -10,3 +10,15 @@ C:\Users\vinic\Projetos\ModeloDeReferencia\ModeloDeReferencia.BLL\bin\Debug\Dapp
 C:\Users\vinic\Projetos\ModeloDeReferencia\ModeloDeReferencia.BLL\obj\Debug\ModeloDeReferencia.BLL.csprojResolveAssemblyReference.cache
 C:\Users\vinic\Projetos\ModeloDeReferencia\ModeloDeReferencia.BLL\obj\Debug\ModeloDeReferencia.BLL.dll
 C:\Users\vinic\Projetos\ModeloDeReferencia\ModeloDeReferencia.BLL\obj\Debug\ModeloDeReferencia.BLL.pdb
+C:\Users\vinic\Projetos\ModeloReferencia\ModeloDeReferencia.BLL\bin\Debug\ModeloDeReferencia.BLL.dll
+C:\Users\vinic\Projetos\ModeloReferencia\ModeloDeReferencia.BLL\bin\Debug\ModeloDeReferencia.BLL.pdb
+C:\Users\vinic\Projetos\ModeloReferencia\ModeloDeReferencia.BLL\bin\Debug\ModeloDeReferencia.DAL.dll
+C:\Users\vinic\Projetos\ModeloReferencia\ModeloDeReferencia.BLL\bin\Debug\ModeloDeReferencia.DTO.dll
+C:\Users\vinic\Projetos\ModeloReferencia\ModeloDeReferencia.BLL\bin\Debug\Dapper.dll
+C:\Users\vinic\Projetos\ModeloReferencia\ModeloDeReferencia.BLL\bin\Debug\ModeloDeReferencia.DAL.pdb
+C:\Users\vinic\Projetos\ModeloReferencia\ModeloDeReferencia.BLL\bin\Debug\ModeloDeReferencia.DAL.dll.config
+C:\Users\vinic\Projetos\ModeloReferencia\ModeloDeReferencia.BLL\bin\Debug\ModeloDeReferencia.DTO.pdb
+C:\Users\vinic\Projetos\ModeloReferencia\ModeloDeReferencia.BLL\bin\Debug\Dapper.xml
+C:\Users\vinic\Projetos\ModeloReferencia\ModeloDeReferencia.BLL\obj\Debug\ModeloDeReferencia.BLL.csprojResolveAssemblyReference.cache
+C:\Users\vinic\Projetos\ModeloReferencia\ModeloDeReferencia.BLL\obj\Debug\ModeloDeReferencia.BLL.dll
+C:\Users\vinic\Projetos\ModeloReferencia\ModeloDeReferencia.BLL\obj\Debug\ModeloDeReferencia.BLL.pdb

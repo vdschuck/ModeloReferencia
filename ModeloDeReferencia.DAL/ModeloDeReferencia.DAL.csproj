@@ -46,7 +46,9 @@
   <ItemGroup>
     <Compile Include="CategoriaDAL.cs" />
     <Compile Include="Intefaces\ICategoriaDAL.cs" />
+    <Compile Include="Intefaces\INivelMaturidadeDAL.cs" />
     <Compile Include="MyConnection.cs" />
+    <Compile Include="NivelMaturidadeDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
