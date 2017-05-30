@@ -1,0 +1,11 @@
+﻿<div class="dialog-custom">
+    <h4 class="text-center"><strong>{{title ? title : 'CONFIRMAÇÃO'}}</strong></h4>    
+
+    <div class="dialog-body">
+        <div class="text-center breakWord" ng-bind-html="msg"></div>
+    </div>
+
+    <div class="buttons-modal text-right">
+        <button class="btn btn-warning" ng-click="closeThisDialog();">FECHAR</button>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+﻿<div class="container" ng-init="getAll()">
+    
+    <!-- HEADING -->
+    <div class="heading">
+        <div class="col-md-10">
+            <form class="form-inline">
+                <div class="form-group" id="div-procurar">
+                    <input type="text" ng-model="categoriaSearch" class="form-control" placeholder="Procure por categoria..." name="procurar" id="procurar">
+                </div>
+            </form>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary" ng-click="openCategoria('I')">
+                <i class="fa fa-plus"></i> Adicionar
+            </button>
+        </div>
+    </div>
+    <!-- END HEADING -->
+
+    <!-- CONTENT -->
+    <div class="content">
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead style="background:#333333; color:#ffffff">
+                    <tr>
+                        <th id="CategoriaNome">NOME</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="categoria in categoriaList | filter:categoriaSearch | itemsPerPage:7">
+                        <td class="col-md-10">{{categoria.Nome}}</td>
+                        <td class="col-md-2 text-center">
+                            <div class="grid btn-group" ng-init="categoria.caretUp = false">
+                                <button type="button" ng-click="categoria.caretUp = !categoria.caretUp; $root.adjustMenu($event)" ng-blur="categoria.caretUp = false" class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    Ações <span ng-class="(categoria.caretUp) ? 'fa fa-caret-up' : 'fa fa-caret-down'"></span>
+                                </button>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="" ng-click="openCategoria('U',categoria)"><i class="fa fa-edit"></i>&nbsp;Editar</a>
+                                        <a href="" ng-click="deleteCategoria(categoria)"><i class="fa fa-remove"></i>&nbsp;Excluir</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="grid-pagination">
+                <dir-pagination-controls max-size="7" boundary-links="true"></dir-pagination-controls>
+            </div>
+        </div>
+    </div>
+    <!-- END CONTENT -->
+</div>

@@ -1,0 +1,5 @@
+C:\Users\vinic\Projetos\ModeloDeReferencia\ModeloDeReferencia.DTO\bin\Debug\ModeloDeReferencia.DTO.dll
+C:\Users\vinic\Projetos\ModeloDeReferencia\ModeloDeReferencia.DTO\bin\Debug\ModeloDeReferencia.DTO.pdb
+C:\Users\vinic\Projetos\ModeloDeReferencia\ModeloDeReferencia.DTO\obj\Debug\ModeloDeReferencia.DTO.dll
+C:\Users\vinic\Projetos\ModeloDeReferencia\ModeloDeReferencia.DTO\obj\Debug\ModeloDeReferencia.DTO.pdb
+C:\Users\vinic\Projetos\ModeloDeReferencia\ModeloDeReferencia.DTO\obj\Debug\ModeloDeReferencia.DTO.csprojResolveAssemblyReference.cache

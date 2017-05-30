@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html ng-app="app" lang="pt-br" ng-strict-di>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.5" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9,IE=edge,chrome=1" />
+    <title>Modelo de Referência</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body ng-controller="HomeController">
+
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿.ngdialog-theme-default, .ngdialog.ngdialog-theme-default .ngdialog-content {
+    border-radius: 0 !important;
+}
+
+
+.dialog-custom h2 {
+    font-size: 16px;
+    margin-left: 13px;
+    color: #033260;
+    font-weight: bold;
+}
+
+
+.dialog-custom .buttons-modal {
+    width: 100%;
+}
+
+.buttons-modal {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 25px 10px 25px;
+}
+
+.dialog-custom .dialog-body {
+    padding: 15px;
+    margin-bottom: 10px;
+    padding-top: 0px;
+}
+
+    .dialog-custom .dialog-body p {
+        margin-bottom: 3px !important;
+    }
+
+    .dialog-custom .dialog-body .deadline {
+        width: 30%;
+    }
+
+    .dialog-custom .dialog-body input, .dialog-custom .dialog-body select {
+        margin-bottom: 8px;
+    }
+
+.dialog-custom p.model {
+    margin-top: 10px !important;
+}

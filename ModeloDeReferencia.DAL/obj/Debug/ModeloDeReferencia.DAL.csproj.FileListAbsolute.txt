@@ -1,0 +1,10 @@
+C:\Users\vinic\Projetos\ModeloDeReferencia\ModeloDeReferencia.DAL\bin\Debug\ModeloDeReferencia.DAL.dll.config
+C:\Users\vinic\Projetos\ModeloDeReferencia\ModeloDeReferencia.DAL\bin\Debug\ModeloDeReferencia.DAL.dll
+C:\Users\vinic\Projetos\ModeloDeReferencia\ModeloDeReferencia.DAL\bin\Debug\ModeloDeReferencia.DAL.pdb
+C:\Users\vinic\Projetos\ModeloDeReferencia\ModeloDeReferencia.DAL\bin\Debug\Dapper.dll
+C:\Users\vinic\Projetos\ModeloDeReferencia\ModeloDeReferencia.DAL\bin\Debug\ModeloDeReferencia.DTO.dll
+C:\Users\vinic\Projetos\ModeloDeReferencia\ModeloDeReferencia.DAL\bin\Debug\ModeloDeReferencia.DTO.pdb
+C:\Users\vinic\Projetos\ModeloDeReferencia\ModeloDeReferencia.DAL\bin\Debug\Dapper.xml
+C:\Users\vinic\Projetos\ModeloDeReferencia\ModeloDeReferencia.DAL\obj\Debug\ModeloDeReferencia.DAL.csprojResolveAssemblyReference.cache
+C:\Users\vinic\Projetos\ModeloDeReferencia\ModeloDeReferencia.DAL\obj\Debug\ModeloDeReferencia.DAL.dll
+C:\Users\vinic\Projetos\ModeloDeReferencia\ModeloDeReferencia.DAL\obj\Debug\ModeloDeReferencia.DAL.pdb

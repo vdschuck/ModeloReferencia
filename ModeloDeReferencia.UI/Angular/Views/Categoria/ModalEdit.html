@@ -1,0 +1,36 @@
+﻿<div class="dialog-custom">
+    <h4 class="text-center"><strong>{{categoriaAction == 'I' ? 'CADASTRAR' : 'EDITAR'}} CATEGORIA</strong></h4>
+
+    <div class="content">
+        <form name="formCategoria" ng-submit="" novalidate>
+            <div class="dialog-body">
+
+                <!-- NOME -->
+                <div class="col-md-12">
+                    <p class="title"><strong>NOME: *</strong> </p>
+                    <ng-messages ng-if="formCategoria.$submitted"
+                                 for="formCategoria.Nome.$error">
+                        <ng-message when="required" class="error-message">
+                            <p class="bg-danger"><i class="fa fa-warning"></i> O campo Nome é obrigatório.</p>
+                        </ng-message>
+                    </ng-messages>
+                    <input type="text" class="form-control" ng-class="(formCategoria.$submitted && !categoria.Nome) ? 'input-error' : ''" name="Nome" ng-model="categoria.Nome" required maxlength="50">
+                </div>
+                <!-- END NOME -->
+
+                <div class="buttons-modal">
+                    <div class="col-md-4">
+                        <i class="requiredAlign">(*) Campos obrigatórios</i>
+                    </div>
+                    <div class="col-md-8 text-right">
+                        <button type="reset" value="Limpar" class="btn btn-link" ng-if="(categoriaAction == 'I' || categoriaAction == 'U')" ng-click="reset(formCategoria)">Limpar</button>
+                        <button type="button" class="btn btn-default" ng-click="closeThisDialog()"><i class="fa fa-times"></i> Cancelar</button>
+                        <button type="submit" class="btn btn-primary" ng-click="saveCategoria(categoriaAction,formCategoria)" ng-enter="confirmEdit(categoriaAction,formCategoria)"><i class="fa fa-floppy-o"></i> Salvar</button>
+                    </div>
+               </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
