@@ -44,7 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AreaProcessoDAL.cs" />
     <Compile Include="CategoriaDAL.cs" />
+    <Compile Include="Intefaces\IAreaProcessoDAL.cs" />
     <Compile Include="Intefaces\ICategoriaDAL.cs" />
     <Compile Include="Intefaces\INivelMaturidadeDAL.cs" />
     <Compile Include="MyConnection.cs" />

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AreaProcesso.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="NivelMaturidade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -16,11 +16,11 @@ namespace ModeloDeReferencia.UI.Controllers
 
         public ActionResult GetAll()
         {
-            var list = _nivelMaturidadeBLL.GetAll().OrderBy(x => x.Nome).ToList();
+            var _listNivelMaturidade = _nivelMaturidadeBLL.GetAll().OrderBy(x => x.Nome).ToList();
 
-            var nivelMaturidadeList = new { nivelMaturidadeList = list };
+            var list = new { listNivelMaturidade = _listNivelMaturidade };
 
-            return Json(nivelMaturidadeList, JsonRequestBehavior.AllowGet);
+            return Json(list, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult GetById(int Id)
