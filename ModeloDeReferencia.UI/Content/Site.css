@@ -25,4 +25,8 @@ footer {
     display: inline-block;
 }
 
+.validation-error {
+    border: 2px solid #ffb3b3;
+}
+
 

@@ -1,0 +1,54 @@
+﻿<div class="dialog-custom">
+
+    <div class="dialog-heading">
+        <h4 class="text-center"><strong>{{nivelMaturidadeAction == 'I' ? 'CADASTRAR' : 'EDITAR'}} NÍVEL MATURIDADE</strong></h4>
+    </div>
+
+    <form name="formNivelMaturidade" ng-submit="" novalidate>
+        <div class="dialog-body">
+            <!-- NOME -->
+            <div class="col-md-12">
+                <p class="title"><strong>NOME: *</strong> </p>
+                <ng-messages ng-if="formNivelMaturidade.$submitted" for="formNivelMaturidade.Nome.$error">
+                    <ng-message when="required" class="error-message">
+                        <p class="bg-danger"><i class="fa fa-warning"></i> O campo Nome é obrigatório.</p>
+                    </ng-message>
+                </ng-messages>
+                <input type="text" class="form-control" ng-class="{'validation-error' : formNivelMaturidade.$submitted && !nivelMaturidade.Nome}" name="Nome" ng-model="nivelMaturidade.Nome" required maxlength="50">
+            </div>
+            <!-- END NOME -->
+            <!-- SIGLA -->
+            <div class="col-md-12">
+                <p class="title"><strong>SIGLA: *</strong> </p>
+                <ng-messages ng-if="formNivelMaturidade.$submitted" for="formNivelMaturidade.Sigla.$error">
+                    <ng-message when="required" class="error-message">
+                        <p class="bg-danger"><i class="fa fa-warning"></i> O campo Sigla é obrigatório.</p>
+                    </ng-message>
+                </ng-messages>
+                <input type="text" class="form-control" ng-class="{'validation-error' : formNivelMaturidade.$submitted && !nivelMaturidade.Sigla}" name="Sigla" ng-model="nivelMaturidade.Sigla" required maxlength="50">
+            </div>
+            <!-- END SIGLA -->
+            <!-- DESCRICAO -->
+            <div class="col-md-12">
+                <p class="title"><strong>DESCRIÇÃO: </strong> </p>
+                <textarea class="form-control" name="Descricao" ng-model="nivelMaturidade.Descricao"></textarea>
+            </div>
+            <!-- END DESCRICAO -->
+
+        </div>
+
+        <div class="dialog-footer">
+            <div class="col-md-5">
+                <i class="requiredAlign">(*) Campos obrigatórios</i>
+            </div>
+            <div class="col-md-7 text-right">
+                <button type="reset" value="Limpar" class="btn btn-link" ng-if="(nivelMaturidadeAction == 'I' || nivelMaturidadeAction == 'U')" ng-click="reset(formNivelMaturidade)">Limpar</button>
+                <button type="button" class="btn btn-default" ng-click="closeThisDialog()"><i class="fa fa-times"></i> Cancelar</button>
+                <button type="submit" class="btn btn-primary" ng-click="saveNivelMaturidade(nivelMaturidadeAction,formNivelMaturidade)" ng-enter="confirmEdit(nivelMaturidadeAction,formNivelMaturidade)"><i class="fa fa-floppy-o"></i> Salvar</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+

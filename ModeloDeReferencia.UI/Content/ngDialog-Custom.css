@@ -2,6 +2,21 @@
     border-radius: 0 !important;
 }
 
+.dialog-custom .dialog-heading {
+    text-align: center;   
+}
+
+.dialog-custom .dialog-body {
+    padding: 15px;
+    margin: 10px 0 10px 0; 
+    display: grid;
+    height: 100%;
+}
+
+.dialog-custom .dialog-footer {
+    display: flex;
+}
+
 
 .dialog-custom h2 {
     font-size: 16px;
@@ -12,22 +27,23 @@
 
 
 .dialog-custom .buttons-modal {
-    width: 100%;
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: -3em;
 }
 
 .buttons-modal {
-    position: absolute;
+    position: relative;
     right: 0;
     bottom: 0;
     left: 0;
     padding: 0 25px 10px 25px;
+    margin-top: 25px;
 }
 
-.dialog-custom .dialog-body {
-    padding: 15px;
-    margin-bottom: 10px;
-    padding-top: 0px;
-}
+
 
     .dialog-custom .dialog-body p {
         margin-bottom: 3px !important;

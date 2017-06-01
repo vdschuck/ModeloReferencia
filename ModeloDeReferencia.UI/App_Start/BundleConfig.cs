@@ -25,24 +25,12 @@ namespace ModeloDeReferencia.UI
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css",
+                      "~/Content/site.css",                      
                       "~/Content/ngDialog.css",
                       "~/Content/ngDialog-Custom.css",
                       "~/Content/ngDialog-theme-default.css",
                       "~/Content/font-awesome.min.css",                       
-                      "~/Content/select.min.css"));
-
-            bundles.Add(new StyleBundle("~/Content/css")
-                .Include("~/Content/bootstrap.css"
-                        , "~/Content/ngDialog.css"
-                        , "~/Content/ngDialog-Custom.css"
-                        , "~/Content/ngDialog-theme-default.css"
-                        , "~/Content/font-awesome.min.css"
-                        , "~/Content/Site.css"
-                        , "~/Content/select.min.css"
-                        , "~/Content/custom.css"
-                        ));
-
+                      "~/Content/select.min.css"));  
 
             bundles.Add(new ScriptBundle("~/bundles/angular")
                         .Include(   "~/Scripts/angular.min.js", 

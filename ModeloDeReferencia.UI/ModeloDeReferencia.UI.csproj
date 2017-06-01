@@ -143,6 +143,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NivelMaturidadeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -152,15 +153,19 @@
     <Content Include="Angular\app.js" />
     <Content Include="Angular\Controllers\CategoriaController.js" />
     <Content Include="Angular\Controllers\HomeController.js" />
+    <Content Include="Angular\Controllers\NivelMaturidadeController.js" />
     <Content Include="Angular\Directives\datepickerField.js" />
     <Content Include="Angular\Directives\dirPagination.js" />
     <Content Include="Angular\Directives\numbersOnly.js" />
     <Content Include="Angular\Factories\httpinterceptor.js" />
     <Content Include="Angular\Factories\url.js" />
     <Content Include="Angular\Services\CategoriaService.js" />
+    <Content Include="Angular\Services\NivelMaturidadeService.js" />
     <Content Include="Angular\Views\Categoria\Index.html" />
     <Content Include="Angular\Views\Categoria\ModalEdit.html" />
     <Content Include="Angular\Views\Home\Index.html" />
+    <Content Include="Angular\Views\NivelMaturidade\Index.html" />
+    <Content Include="Angular\Views\NivelMaturidade\ModalEdit.html" />
     <Content Include="Angular\Views\Util\ConfirmationModal.html" />
     <Content Include="Angular\Views\Util\ModalMessage.html" />
     <Content Include="Content\bootstrap-custom.css" />

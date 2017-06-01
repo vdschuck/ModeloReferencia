@@ -1,0 +1,61 @@
+﻿<div class="container" ng-init="getAll()">
+    
+    <!-- HEADING -->
+    <div class="heading">
+        <div class="col-md-10">
+            <form class="form-inline">
+                <div class="form-group" id="div-procurar">
+                    <input type="text" class="form-control" ng-model="nivelMaturidadeSearch" placeholder="Procure..." name="nivelMaturidade" id="procurar">
+                </div>
+            </form>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary" ng-click="openNivelMaturidade('I')">
+                <i class="fa fa-plus"></i> Adicionar
+            </button>
+        </div>
+    </div>
+    <!-- END HEADING -->
+
+    <!-- CONTENT -->
+    <div class="content">
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead style="background:#333333; color:#ffffff">
+                    <tr>
+                        <th id="NivelMaturidadeNome">NOME</th>
+                        <th id="NivelMaturidadeSigla">SIGLA</th>
+                        <th id="NivelMaturidadeDescricao">DESCRIÇÃO</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr dir-paginate="nivelMaturidade in nivelMaturidadeList | filter:nivelMaturidadeSearch | itemsPerPage:7">
+                        <td>{{nivelMaturidade.Nome}}</td>
+                        <td>{{nivelMaturidade.Sigla}}</td>
+                        <td>{{nivelMaturidade.Descricao}}</td>
+                        <td class="col-md-2 text-center">
+                            <div class="grid btn-group" ng-init="nivelMaturidade.caretUp = false">
+                                <button type="button" ng-click="nivelMaturidade.caretUp = !nivelMaturidade.caretUp; $root.adjustMenu($event)" ng-blur="nivelMaturidade.caretUp = false" class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    Ações <span ng-class="(nivelMaturidade.caretUp) ? 'fa fa-caret-up' : 'fa fa-caret-down'"></span>
+                                </button>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="" ng-click="openNivelMaturidade('U',nivelMaturidade)"><i class="fa fa-edit"></i>&nbsp;Editar</a>
+                                        <a href="" ng-click="deleteNivelMaturidade(nivelMaturidade)"><i class="fa fa-remove"></i>&nbsp;Excluir</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="grid-pagination">
+                <dir-pagination-controls max-size="7" boundary-links="true"></dir-pagination-controls>
+            </div>
+        </div>
+    </div>
+    <!-- END CONTENT -->
+</div>

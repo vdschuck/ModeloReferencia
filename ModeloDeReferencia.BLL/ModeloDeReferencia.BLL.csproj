@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="CategoriaBLL.cs" />
     <Compile Include="Interfaces\ICategoriaBLL.cs" />
+    <Compile Include="Interfaces\INivelMaturidadeBLL.cs" />
+    <Compile Include="NivelMaturidadeBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,11 @@
 
     $scope.openCategoria = function () {
         $location.path('/categoria');
-    }    
+    };
+
+    $scope.openNivelMaturidade = function () {
+        $location.path('/nivelMaturidade');
+    };    
 
     $scope.init();
 }]);
