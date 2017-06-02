@@ -15,6 +15,14 @@
             Update:             'NivelMaturidade/Update',
             Delete:             'NivelMaturidade/Delete'            
         },
+        AreaProcesso: {
+            GetAll:             'AreaProcesso/GetAll',
+            GetById:            'AreaProcesso/GetById',
+            Insert:             'AreaProcesso/Insert',
+            Update:             'AreaProcesso/Update',
+            Delete:             'AreaProcesso/Delete',
+            GetAllSmallTypes:   'AreaProcesso/GetAllSmallTypes'
+        },
     };
 
 });

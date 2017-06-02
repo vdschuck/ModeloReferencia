@@ -10,7 +10,10 @@
 
     $scope.openNivelMaturidade = function () {
         $location.path('/nivelMaturidade');
-    };    
+    };   
+    $scope.openAreaProcesso = function () {
+        $location.path('/areaProcesso');
+    };  
 
     $scope.init();
 }]);

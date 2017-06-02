@@ -6,7 +6,7 @@
     $scope.getAll = function (callbackFunction) {
         var response = NivelMaturidadeService.getAll();
         response.then(function (data) {
-            $scope.nivelMaturidadeList = angular.copy(data.nivelMaturidadeList);
+            $scope.nivelMaturidadeList = angular.copy(data.listNivelMaturidade);
 
             if (callbackFunction) {
                 callbackFunction();

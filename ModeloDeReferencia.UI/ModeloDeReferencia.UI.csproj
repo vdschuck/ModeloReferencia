@@ -152,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Angular\app.js" />
+    <Content Include="Angular\Controllers\AreaProcessoController.js" />
     <Content Include="Angular\Controllers\CategoriaController.js" />
     <Content Include="Angular\Controllers\HomeController.js" />
     <Content Include="Angular\Controllers\NivelMaturidadeController.js" />
@@ -160,8 +161,11 @@
     <Content Include="Angular\Directives\numbersOnly.js" />
     <Content Include="Angular\Factories\httpinterceptor.js" />
     <Content Include="Angular\Factories\url.js" />
+    <Content Include="Angular\Services\AreaProcessoService.js" />
     <Content Include="Angular\Services\CategoriaService.js" />
     <Content Include="Angular\Services\NivelMaturidadeService.js" />
+    <Content Include="Angular\Views\AreaProcesso\Index.html" />
+    <Content Include="Angular\Views\AreaProcesso\ModalEdit.html" />
     <Content Include="Angular\Views\Categoria\Index.html" />
     <Content Include="Angular\Views\Categoria\ModalEdit.html" />
     <Content Include="Angular\Views\Home\Index.html" />

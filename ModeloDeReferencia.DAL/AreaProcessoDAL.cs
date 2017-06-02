@@ -58,14 +58,13 @@ namespace ModeloDeReferencia.DAL
 
         public int Insert(AreaProcesso areaProcesso)
         {
-            var result = 0;
-            StringBuilder query = new StringBuilder();
+            var result = 0;            
 
             using (var con = OpenConnection())
             {
-                query.Append("@'INSERT INTO area_processo");
-                query.Append("(nome, sigla, descricao, nivelMaturidadeId, categoriaId)");
-                query.Append("VALUES(@NOME, @SIGLA, @DESCRICAO, @NIVELMATURIDADEID, @CATEGORIAID)'");
+                var query = @"INSERT INTO area_processo" +
+                            "(nome, sigla, descricao, nivelMaturidadeId, categoriaId) " +
+                            "VALUES(@NOME, @SIGLA, @DESCRICAO, @NIVELMATURIDADEID, @CATEGORIAID)";
                
                 var parameter = new { NOME = areaProcesso.Nome, SIGLA = areaProcesso.Sigla, DESCRICAO = areaProcesso.Descricao, CATEGORIAID = areaProcesso.CategoriaId, NIVELMATURIDADEID = areaProcesso.NivelMaturidadeId };
 
@@ -78,17 +77,17 @@ namespace ModeloDeReferencia.DAL
 
         public int Update(AreaProcesso areaProcesso)
         {
-            var result = 0;
-            StringBuilder query = new StringBuilder();           
+            var result = 0;                  
 
             using (var con = OpenConnection())
             {
-                query.Append("@'UPDATE area_processo SET");
-                query.Append("nome = @NOME, sigla = @SIGLA,");
-                query.Append("descricao = @DESCRICAO,");
-                query.Append("nivelMaturidadeId = @NIVELMATURIDADEID,");
-                query.Append("categoria = @CATEGORIAID");
-                query.Append("WHERE id = @ID'");
+                var query = @"UPDATE area_processo SET " +
+                             "nome = @NOME, " +
+                             "sigla = @SIGLA, " +
+                             "descricao = @DESCRICAO, " +
+                             "nivelMaturidadeId = @NIVELMATURIDADEID, " +
+                             "categoriaId = @CATEGORIAID " +
+                             "WHERE id = @ID";
                
                 var parameter = new { ID = areaProcesso.Id, NOME = areaProcesso.Nome, SIGLA = areaProcesso.Sigla, DESCRICAO = areaProcesso.Descricao, CATEGORIAID = areaProcesso.CategoriaId, NIVELMATURIDADEID = areaProcesso.NivelMaturidadeId };
                 

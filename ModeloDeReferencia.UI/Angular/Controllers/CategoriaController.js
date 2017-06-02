@@ -6,7 +6,7 @@
     $scope.getAll = function (callbackFunction) {
         var response = CategoriaService.getAll();
         response.then(function (data) {
-            $scope.categoriaList = angular.copy(data.categoriaList);
+            $scope.categoriaList = angular.copy(data.listCategoria);
 
             if (callbackFunction) {
                 callbackFunction();

@@ -1,0 +1,86 @@
+﻿<div class="dialog-custom" ng-init="GetAllSmallTypes()">
+
+    <div class="dialog-heading">
+        <h4 class="text-center"><strong>{{action == 'I' ? 'CADASTRAR' : 'EDITAR'}} AREA PROCESSO</strong></h4>
+    </div>
+
+    <form name="formAreaProcesso" ng-submit="" novalidate>
+        <div class="dialog-body">
+            <!-- NOME -->
+            <div class="col-md-12">
+                <p class="title"><strong>NOME: *</strong> </p>
+                <ng-messages ng-if="formAreaProcesso.$submitted" for="formAreaProcesso.Nome.$error">
+                    <ng-message when="required" class="error-message">
+                        <p class="bg-danger"><i class="fa fa-warning"></i> Este campo é obrigatório</p>
+                    </ng-message>
+                </ng-messages>
+                <input type="text" class="form-control" ng-class="{'validation-error' : formAreaProcesso.$submitted && !areaProcesso.Nome}" name="Nome" ng-model="areaProcesso.Nome" required maxlength="50">
+            </div>
+            <!-- END NOME -->
+            <!-- SIGLA -->
+            <div class="col-md-12">
+                <p class="title"><strong>SIGLA: *</strong> </p>
+                <ng-messages ng-if="formAreaProcesso.$submitted" for="formAreaProcesso.Sigla.$error">
+                    <ng-message when="required" class="error-message">
+                        <p class="bg-danger"><i class="fa fa-warning"></i> Este campo é obrigatório</p>
+                    </ng-message>
+                </ng-messages>
+                <input type="text" class="form-control" ng-class="{'validation-error' : formAreaProcesso.$submitted && !areaProcesso.Sigla}" name="Sigla" ng-model="areaProcesso.Sigla" required maxlength="50">
+            </div>
+            <!-- END SIGLA -->
+            <!-- NÍVEL MATURIDADE -->
+            <div class="col-md-12">
+                <p class="title"><strong>NÍVEL MATURIDADE: *</strong> </p>
+                <ng-messages ng-if="formAreaProcesso.$submitted"
+                             for="formAreaProcesso.NivelMaturidade.$error">
+                    <ng-message when="required" class="error-message">
+                        <p class="bg-danger"><i class="fa fa-warning"></i> Este campo é obrigatório</p>
+                    </ng-message>
+                </ng-messages>
+            </div>
+            <div class="col-md-12">
+                <select class="form-control" name="NivelMaturidade" ng-model="areaProcesso.NivelMaturidade" ng-options="nivelMaturidade.Nome for nivelMaturidade in nivelMaturidadeList" ng-class="(formAreaProcesso.$submitted && !areaProcesso.NivelMaturidade) ? 'validation-error' : ''" required>
+                    <option value="">Selecione...</option>
+                </select>
+            </div>
+            <!-- END NÍVEL MATURIDADE -->
+            <!-- CATEGORIA -->
+            <div class="col-md-12">
+                <p class="title"><strong>CATEGORIA: *</strong> </p>
+                <ng-messages ng-if="formAreaProcesso.$submitted"
+                             for="formAreaProcesso.Categoria.$error">
+                    <ng-message when="required" class="error-message">
+                        <p class="bg-danger"><i class="fa fa-warning"></i> Este campo é obrigatório</p>
+                    </ng-message>
+                </ng-messages>
+            </div>
+            <div class="col-md-12">
+                <select class="form-control" name="Categoria" ng-model="areaProcesso.Categoria" ng-options="categoria.Nome for categoria in categoriaList" ng-class="(formAreaProcesso.$submitted && !areaProcesso.Categoria) ? 'validation-error' : ''" required>
+                    <option value="">Selecione...</option>
+                </select>
+            </div>
+            <!-- END CATEGORIA -->
+            <!-- DESCRICAO -->
+            <div class="col-md-12">
+                <p class="title"><strong>DESCRIÇÃO: </strong> </p>
+                <textarea class="form-control" name="Descricao" ng-model="areaProcesso.Descricao"></textarea>
+            </div>
+            <!-- END DESCRICAO -->
+
+        </div>
+
+        <div class="dialog-footer">
+            <div class="col-md-5">
+                <i class="requiredAlign">(*) Campos obrigatórios</i>
+            </div>
+            <div class="col-md-7 text-right">
+                <button type="reset" value="Limpar" class="btn btn-link" ng-if="(action == 'I' || action == 'U')" ng-click="Reset(formAreaProcesso)">Limpar</button>
+                <button type="button" class="btn btn-default" ng-click="closeThisDialog()"><i class="fa fa-times"></i> Cancelar</button>
+                <button type="submit" class="btn btn-primary" ng-click="Save(action, formAreaProcesso)" ng-enter="confirmEdit(action, formAreaProcesso)"><i class="fa fa-floppy-o"></i> Salvar</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+

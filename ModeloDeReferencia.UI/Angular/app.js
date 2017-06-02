@@ -19,6 +19,10 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($r
             controller: 'NivelMaturidadeController',
             templateUrl: 'Angular/Views/NivelMaturidade/Index.html'
         })
+        .when('/areaProcesso', {
+            controller: 'AreaProcessoController',
+            templateUrl: 'Angular/Views/AreaProcesso/Index.html'
+        })
         .otherwise({ redirectTo: '/' });
 
     $locationProvider.hashPrefix('');
