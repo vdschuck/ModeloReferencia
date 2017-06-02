@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS ModeloDeReferencia;
+CREATE DATABASE ModeloDeReferencia;
 
 USE ModeloDeReferencia;
 

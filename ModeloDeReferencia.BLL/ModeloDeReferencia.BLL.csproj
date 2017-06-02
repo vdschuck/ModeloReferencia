@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AreaProcessoBLL.cs" />
     <Compile Include="CategoriaBLL.cs" />
+    <Compile Include="Interfaces\IAreaProcessoBLL.cs" />
     <Compile Include="Interfaces\ICategoriaBLL.cs" />
     <Compile Include="Interfaces\INivelMaturidadeBLL.cs" />
     <Compile Include="NivelMaturidadeBLL.cs" />
