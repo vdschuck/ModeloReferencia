@@ -19,5 +19,9 @@ namespace ModeloDeReferencia.DTO
         public int NivelMaturidadeId { get; set; }
 
         public int CategoriaId { get; set; }
+
+        public virtual NivelMaturidade NivelMaturidade { get; set; }
+
+        public virtual Categoria Categoria { get; set; }
     }
 }

@@ -18,7 +18,13 @@ namespace ModeloDeReferencia.UI.Controllers
 
         public ActionResult GetAll()
         {
-            var _listAreaProcesso = _areaProcessoBLL.GetAll().OrderBy(x => x.Nome).ToList();
+            var _listAreaProcesso = _areaProcessoBLL.GetAll().OrderBy(x => x.Nome).ToList();           
+
+            foreach (var _areaProcesso in _listAreaProcesso)
+            {
+                _areaProcesso.NivelMaturidade = _nivelMaturidadeBLL.GetById(_areaProcesso.NivelMaturidadeId);
+                _areaProcesso.Categoria = _categoriaBLL.GetById(_areaProcesso.CategoriaId);
+            }
 
             var list = new { listAreaProcesso = _listAreaProcesso };
 

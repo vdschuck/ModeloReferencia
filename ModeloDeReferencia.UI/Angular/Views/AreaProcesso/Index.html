@@ -36,8 +36,8 @@
                         <td>{{areaProcesso.Nome}}</td>
                         <td>{{areaProcesso.Sigla}}</td>
                         <td>{{areaProcesso.Descricao}}</td>
-                        <td>{{areaProcesso.NivelMaturidadeId}}</td>
-                        <td>{{areaProcesso.CategoriaId}}</td>
+                        <td>{{areaProcesso.NivelMaturidade.Nome}}</td>
+                        <td>{{areaProcesso.Categoria.Nome}}</td>
                         <td class="col-md-2 text-center">
                             <div class="grid btn-group" ng-init="areaProcesso.caretUp = false">
                                 <button type="button" ng-click="areaProcesso.caretUp = !areaProcesso.caretUp; $root.adjustMenu($event)" ng-blur="areaProcesso.caretUp = false" class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">

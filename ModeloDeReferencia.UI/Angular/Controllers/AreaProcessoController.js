@@ -20,14 +20,14 @@
     $scope.Open = function (action, areaProcesso) {
         $scope.action = action;
 
-        if (action == 'U') {
+        if (action === 'U') {
             $scope.areaProcesso = angular.copy(areaProcesso);
         } else {
             $scope.areaProcesso = {};
         }
 
         $scope.SaveCallback = function (areaProcesso) {
-            $scope.msg = 'Registro <b> ' + areaProcesso.Nome + ' </b> ' + (action == 'I' ? ' incluído' : ' atualizado') + ' com sucesso.';
+            $scope.msg = 'Registro <b> ' + areaProcesso.Nome + ' </b> ' + (action === 'I' ? ' incluído' : ' atualizado') + ' com sucesso.';
 
             var dialog = ngDialog.open({
                 template: 'Angular/Views/Util/ModalMessage.html',
@@ -79,7 +79,7 @@
     };
 
     $scope.clikEvent = false;
-
+    
     /* -- SAVE -- */
     $scope.Save = function (action, formAreaProcesso) {
         if (formAreaProcesso.$valid) {
@@ -88,9 +88,9 @@
                 var listLenght = $scope.areaProcessoList.length;
                 var exist = false;
 
-                if (action == 'I') {
+                if (action === 'I') {
                     for (var i = 0; i < listLenght; i++) {
-                        if ($scope.areaProcessoList[i].Nome == $scope.areaProcesso.Nome) {
+                        if ($scope.areaProcessoList[i].Nome === $scope.areaProcesso.Nome) {
                             exist = true;
                             break;
                         }
@@ -104,7 +104,7 @@
                         var data = PrepareData(action, $scope.areaProcesso);
                         var retorno = null;
 
-                        if (action == 'U')
+                        if (action === 'U')
                             retorno = AreaProcessoService.update(data);
                         else
                             retorno = AreaProcessoService.insert(data);
@@ -160,7 +160,7 @@
             controller: 'AreaProcessoController',
             scope: $scope
         });
-    }
+    };
 
 }]);
 
@@ -175,7 +175,7 @@ function PrepareData(action, data) {
         CategoriaId: data.Categoria.Id
     };
 
-    if (action == 'U') {
+    if (action === 'U') {
         areaProcesso.Id = data.Id;
     }
 
