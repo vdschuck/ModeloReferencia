@@ -145,6 +145,7 @@
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NivelMaturidadeController.cs" />
+    <Compile Include="Controllers\ProdutoTrabalhoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -156,6 +157,7 @@
     <Content Include="Angular\Controllers\CategoriaController.js" />
     <Content Include="Angular\Controllers\HomeController.js" />
     <Content Include="Angular\Controllers\NivelMaturidadeController.js" />
+    <Content Include="Angular\Controllers\ProdutoTrabalhoController.js" />
     <Content Include="Angular\Directives\datepickerField.js" />
     <Content Include="Angular\Directives\dirPagination.js" />
     <Content Include="Angular\Directives\numbersOnly.js" />
@@ -164,6 +166,7 @@
     <Content Include="Angular\Services\AreaProcessoService.js" />
     <Content Include="Angular\Services\CategoriaService.js" />
     <Content Include="Angular\Services\NivelMaturidadeService.js" />
+    <Content Include="Angular\Services\ProdutoTrabalhoService.js" />
     <Content Include="Angular\Views\AreaProcesso\Index.html" />
     <Content Include="Angular\Views\AreaProcesso\ModalEdit.html" />
     <Content Include="Angular\Views\Categoria\Index.html" />
@@ -171,6 +174,8 @@
     <Content Include="Angular\Views\Home\Index.html" />
     <Content Include="Angular\Views\NivelMaturidade\Index.html" />
     <Content Include="Angular\Views\NivelMaturidade\ModalEdit.html" />
+    <Content Include="Angular\Views\ProdutoTrabalho\Index.html" />
+    <Content Include="Angular\Views\ProdutoTrabalho\ModalEdit.html" />
     <Content Include="Angular\Views\Util\ConfirmationModal.html" />
     <Content Include="Angular\Views\Util\ModalMessage.html" />
     <Content Include="Content\bootstrap-custom.css" />

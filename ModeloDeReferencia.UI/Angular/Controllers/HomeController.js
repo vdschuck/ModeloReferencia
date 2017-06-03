@@ -14,6 +14,9 @@
     $scope.openAreaProcesso = function () {
         $location.path('/areaProcesso');
     };  
+    $scope.openProdutoTrabalho = function () {
+        $location.path('/produtoTrabalho');
+    };  
 
     $scope.init();
 }]);

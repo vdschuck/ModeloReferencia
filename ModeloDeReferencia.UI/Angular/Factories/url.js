@@ -23,6 +23,14 @@
             Delete:             'AreaProcesso/Delete',
             GetAllSmallTypes:   'AreaProcesso/GetAllSmallTypes'
         },
+        ProdutoTrabalho: {
+            GetAll:             'ProdutoTrabalho/GetAll',
+            GetById:            'ProdutoTrabalho/GetById',
+            Insert:             'ProdutoTrabalho/Insert',
+            Update:             'ProdutoTrabalho/Update',
+            Delete:             'ProdutoTrabalho/Delete',
+            GetAllSmallTypes:   'ProdutoTrabalho/GetAllSmallTypes'
+        },
     };
 
 });

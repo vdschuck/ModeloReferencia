@@ -23,6 +23,10 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($r
             controller: 'AreaProcessoController',
             templateUrl: 'Angular/Views/AreaProcesso/Index.html'
         })
+        .when('/produtoTrabalho', {
+            controller: 'ProdutoTrabalhoController',
+            templateUrl: 'Angular/Views/ProdutoTrabalho/Index.html'
+        })
         .otherwise({ redirectTo: '/' });
 
     $locationProvider.hashPrefix('');

@@ -43,6 +43,7 @@
     <Compile Include="AreaProcesso.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="NivelMaturidade.cs" />
+    <Compile Include="ProdutoTrabalho.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
