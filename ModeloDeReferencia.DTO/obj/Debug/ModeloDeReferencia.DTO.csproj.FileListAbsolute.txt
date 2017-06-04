@@ -7,4 +7,3 @@ C:\Users\vinic\Projetos\ModeloReferencia\ModeloDeReferencia.DTO\bin\Debug\Modelo
 C:\Users\vinic\Projetos\ModeloReferencia\ModeloDeReferencia.DTO\bin\Debug\ModeloDeReferencia.DTO.pdb
 C:\Users\vinic\Projetos\ModeloReferencia\ModeloDeReferencia.DTO\obj\Debug\ModeloDeReferencia.DTO.dll
 C:\Users\vinic\Projetos\ModeloReferencia\ModeloDeReferencia.DTO\obj\Debug\ModeloDeReferencia.DTO.pdb
-C:\Users\vinic\Projetos\ModeloReferencia\ModeloDeReferencia.DTO\obj\Debug\ModeloDeReferencia.DTO.csprojResolveAssemblyReference.cache

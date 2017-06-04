@@ -44,9 +44,11 @@
     <Compile Include="CategoriaBLL.cs" />
     <Compile Include="Interfaces\IAreaProcessoBLL.cs" />
     <Compile Include="Interfaces\ICategoriaBLL.cs" />
+    <Compile Include="Interfaces\IMetaEspecificaBLL..cs" />
     <Compile Include="Interfaces\INivelMaturidadeBLL.cs" />
     <Compile Include="Interfaces\IProdutoTrabalhoBLL.cs" />
-    <Compile Include="Interfaces\ProdutoTrabalhoBLL.cs" />
+    <Compile Include="MetaEspecificaBLL.cs" />
+    <Compile Include="ProdutoTrabalhoBLL.cs" />
     <Compile Include="NivelMaturidadeBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

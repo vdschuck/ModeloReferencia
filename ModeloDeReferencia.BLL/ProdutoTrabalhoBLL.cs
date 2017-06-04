@@ -1,5 +1,4 @@
-﻿using ModeloDeReferencia.BLL.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +6,7 @@ using System.Threading.Tasks;
 using ModeloDeReferencia.DTO;
 using ModeloDeReferencia.DAL.Intefaces;
 using ModeloDeReferencia.DAL;
+using ModeloDeReferencia.BLL.Interfaces;
 
 namespace ModeloDeReferencia.BLL
 {
