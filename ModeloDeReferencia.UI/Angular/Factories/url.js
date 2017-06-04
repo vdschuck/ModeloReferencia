@@ -38,6 +38,14 @@
             Update:             'MetaEspecifica/Update',
             Delete:             'MetaEspecifica/Delete',
             GetAllSmallTypes:   'MetaEspecifica/GetAllSmallTypes'
+        },
+        PraticaEspecifica: {
+            GetAll:             'PraticaEspecifica/GetAll',
+            GetById:            'PraticaEspecifica/GetById',
+            Insert:             'PraticaEspecifica/Insert',
+            Update:             'PraticaEspecifica/Update',
+            Delete:             'PraticaEspecifica/Delete',
+            GetAllSmallTypes:   'PraticaEspecifica/GetAllSmallTypes'
         }
     };
 

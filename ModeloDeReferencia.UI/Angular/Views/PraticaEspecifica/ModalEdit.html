@@ -1,0 +1,70 @@
+﻿<div class="dialog-custom" ng-init="GetAllSmallTypes()">
+
+    <div class="dialog-heading">
+        <h4 class="text-center"><strong>{{action == 'I' ? 'CADASTRAR' : 'EDITAR'}} PRATICA ESPECIFICA</strong></h4>
+    </div>
+
+    <form name="formPraticaEspecifica" ng-submit="" novalidate>
+        <div class="dialog-body">
+            <!-- NOME -->
+            <div class="col-md-12">
+                <p class="title"><strong>NOME: *</strong> </p>
+                <ng-messages ng-if="formPraticaEspecifica.$submitted" for="formPraticaEspecifica.Nome.$error">
+                    <ng-message when="required" class="error-message">
+                        <p class="bg-danger"><i class="fa fa-warning"></i> Este campo é obrigatório</p>
+                    </ng-message>
+                </ng-messages>
+                <input type="text" class="form-control" ng-class="{'validation-error' : formPraticaEspecifica.$submitted && !praticaEspecifica.Nome}" name="Nome" ng-model="praticaEspecifica.Nome" required maxlength="50">
+            </div>
+            <!-- END NOME -->
+            <!-- SIGLA -->
+            <div class="col-md-12">
+                <p class="title"><strong>SIGLA: *</strong> </p>
+                <ng-messages ng-if="formPraticaEspecifica.$submitted" for="formPraticaEspecifica.Sigla.$error">
+                    <ng-message when="required" class="error-message">
+                        <p class="bg-danger"><i class="fa fa-warning"></i> Este campo é obrigatório</p>
+                    </ng-message>
+                </ng-messages>
+                <input type="text" class="form-control" ng-class="{'validation-error' : formPraticaEspecifica.$submitted && !praticaEspecifica.Sigla}" name="Sigla" ng-model="praticaEspecifica.Sigla" required maxlength="50">
+            </div>
+            <!-- END SIGLA -->
+            <!-- META ESPECIFICA -->
+            <div class="col-md-12">
+                <p class="title"><strong>META ESPECIFICA: *</strong> </p>
+                <ng-messages ng-if="formAreaProcesso.$submitted"
+                             for="formPraticaEspecifica.MetaEspecifica.$error">
+                    <ng-message when="required" class="error-message">
+                        <p class="bg-danger"><i class="fa fa-warning"></i> Este campo é obrigatório</p>
+                    </ng-message>
+                </ng-messages>
+            </div>
+            <div class="col-md-12">
+                <select class="form-control" name="MetaEspecifica" ng-model="praticaEspecifica.MetaEspecifica" ng-options="metaEspecifica.Nome for metaEspecifica in metaEspecificaList" ng-class="(formPraticaEspecifica.$submitted && !praticaEspecifica.MetaEspecifica) ? 'validation-error' : ''" required>
+                    <option value="">Selecione...</option>
+                </select>
+            </div>     
+            <!-- END META ESPECIFICA -->            
+            <!-- DESCRICAO -->
+            <div class="col-md-12">
+                <p class="title"><strong>DESCRIÇÃO: </strong> </p>
+                <textarea class="form-control" name="Descricao" ng-model="praticaEspecifica.Descricao"></textarea>
+            </div>
+            <!-- END DESCRICAO -->
+
+        </div>
+
+        <div class="dialog-footer">
+            <div class="col-md-5">
+                <i class="requiredAlign">(*) Campos obrigatórios</i>
+            </div>
+            <div class="col-md-7 text-right">
+                <button type="reset" value="Limpar" class="btn btn-link" ng-if="(action == 'I' || action == 'U')" ng-click="Reset(formPraticaEspecifica)">Limpar</button>
+                <button type="button" class="btn btn-default" ng-click="closeThisDialog()"><i class="fa fa-times"></i> Cancelar</button>
+                <button type="submit" class="btn btn-primary" ng-click="Save(action, formPraticaEspecifica)" ng-enter="confirmEdit(action, formPraticaEspecifica)"><i class="fa fa-floppy-o"></i> Salvar</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+

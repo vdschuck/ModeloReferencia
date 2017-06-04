@@ -24,7 +24,7 @@ namespace ModeloDeReferencia.UI.Controllers
                 _praticaEspecifica.MetaEspecifica = _metaEspecificaBLL.GetById(_praticaEspecifica.MetaEspecificaId);                
             }
 
-            var list = new { listAreaProcesso = _listPraticaEspecifica };
+            var list = new { listPraticaEspecifica = _listPraticaEspecifica };
 
             return Json(list, JsonRequestBehavior.AllowGet);
         }

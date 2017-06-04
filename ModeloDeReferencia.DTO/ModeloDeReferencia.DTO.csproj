@@ -44,6 +44,7 @@
     <Compile Include="Categoria.cs" />
     <Compile Include="MetaEspecifica.cs" />
     <Compile Include="NivelMaturidade.cs" />
+    <Compile Include="PraticaEspecifica.cs" />
     <Compile Include="ProdutoTrabalho.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

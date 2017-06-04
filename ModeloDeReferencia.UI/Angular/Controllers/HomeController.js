@@ -18,6 +18,8 @@
     $scope.openMetaEspecifica = function () {
         $location.path('/metaEspecifica');
     }; 
-
+    $scope.openPraticaEspecifica = function () {
+        $location.path('/praticaEspecifica');
+    };
     $scope.init();
 }]);

@@ -62,7 +62,7 @@ namespace ModeloDeReferencia.DAL
 
             using (var con = OpenConnection())
             {
-                var query = @"INSERT INTO meta_especifica" +
+                var query = @"INSERT INTO pratica_especifica" +
                             "(nome, sigla, descricao, metaEspecificaId) VALUES" +
                             "(@NOME, @SIGLA, @DESCRICAO, @METAESPECIFICAID)";
 
@@ -81,14 +81,14 @@ namespace ModeloDeReferencia.DAL
 
             using (var con = OpenConnection())
             {
-                var query = @"UPDATE meta_especifica SET " +
+                var query = @"UPDATE pratica_especifica SET " +
                              "nome = @NOME, " +
                              "sigla = @SIGLA, " +
                              "descricao = @DESCRICAO, " +
-                             "metaEspecificaId = @METAESPECIFICAID, " +                             
+                             "metaEspecificaId = @METAESPECIFICAID " +                             
                              "WHERE id = @ID";
 
-                var parameter = new { NOME = praticaEspecifica.Nome, SIGLA = praticaEspecifica.Sigla, DESCRICAO = praticaEspecifica.Descricao, METAESPECIFICAID = praticaEspecifica.MetaEspecificaId };
+                var parameter = new { ID = praticaEspecifica.Id,  NOME = praticaEspecifica.Nome, SIGLA = praticaEspecifica.Sigla, DESCRICAO = praticaEspecifica.Descricao, METAESPECIFICAID = praticaEspecifica.MetaEspecificaId };
 
                 result = con.Execute(query.ToString(), parameter);
                 con.Dispose();
