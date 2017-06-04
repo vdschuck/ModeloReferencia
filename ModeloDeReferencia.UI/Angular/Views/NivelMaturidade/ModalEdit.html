@@ -14,7 +14,7 @@
                         <p class="bg-danger"><i class="fa fa-warning"></i> O campo Nome é obrigatório.</p>
                     </ng-message>
                 </ng-messages>
-                <input type="text" class="form-control" ng-class="{'validation-error' : formNivelMaturidade.$submitted && !nivelMaturidade.Nome}" name="Nome" ng-model="nivelMaturidade.Nome" required maxlength="50">
+                <input type="text" class="form-control" ng-class="{'validation-error' : formNivelMaturidade.$submitted && !nivelMaturidade.Nome}" name="Nome" ng-model="nivelMaturidade.Nome" required maxlength="100">
             </div>
             <!-- END NOME -->
             <!-- SIGLA -->
@@ -25,7 +25,7 @@
                         <p class="bg-danger"><i class="fa fa-warning"></i> O campo Sigla é obrigatório.</p>
                     </ng-message>
                 </ng-messages>
-                <input type="text" class="form-control" ng-class="{'validation-error' : formNivelMaturidade.$submitted && !nivelMaturidade.Sigla}" name="Sigla" ng-model="nivelMaturidade.Sigla" required maxlength="50">
+                <input type="text" class="form-control" ng-class="{'validation-error' : formNivelMaturidade.$submitted && !nivelMaturidade.Sigla}" name="Sigla" ng-model="nivelMaturidade.Sigla" required maxlength="10">
             </div>
             <!-- END SIGLA -->
             <!-- DESCRICAO -->

@@ -1,56 +1,55 @@
 ﻿<div class="dialog-custom" ng-init="GetAllSmallTypes()">
 
     <div class="dialog-heading">
-        <h4 class="text-center"><strong>{{action == 'I' ? 'CADASTRAR' : 'EDITAR'}} META ESPECIFICA</strong></h4>
+        <h4 class="text-center"><strong>{{action == 'I' ? 'CADASTRAR' : 'EDITAR'}} MODELO</strong></h4>
     </div>
 
-    <form name="formMetaEspecifica" ng-submit="" novalidate>
+    <form name="formModelo" ng-submit="" novalidate>
         <div class="dialog-body">
             <!-- NOME -->
             <div class="col-md-12">
                 <p class="title"><strong>NOME: *</strong> </p>
-                <ng-messages ng-if="formMetaEspecifica.$submitted" for="formMetaEspecifica.Nome.$error">
+                <ng-messages ng-if="formModelo.$submitted" for="formModelo.Nome.$error">
                     <ng-message when="required" class="error-message">
                         <p class="bg-danger"><i class="fa fa-warning"></i> Este campo é obrigatório</p>
                     </ng-message>
                 </ng-messages>
-                <input type="text" class="form-control" ng-class="{'validation-error' : formMetaEspecifica.$submitted && !metaEspecifica.Nome}" name="Nome" ng-model="metaEspecifica.Nome" required maxlength="100">
+                <input type="text" class="form-control" ng-class="{'validation-error' : formModelo.$submitted && !modelo.Nome}" name="Nome" ng-model="modelo.Nome" required maxlength="100">
             </div>
             <!-- END NOME -->
             <!-- SIGLA -->
             <div class="col-md-12">
                 <p class="title"><strong>SIGLA: *</strong> </p>
-                <ng-messages ng-if="formMetaEspecifica.$submitted" for="formMetaEspecifica.Sigla.$error">
+                <ng-messages ng-if="formModelo.$submitted" for="formModelo.Sigla.$error">
                     <ng-message when="required" class="error-message">
                         <p class="bg-danger"><i class="fa fa-warning"></i> Este campo é obrigatório</p>
                     </ng-message>
                 </ng-messages>
-                <input type="text" class="form-control" ng-class="{'validation-error' : formMetaEspecifica.$submitted && !metaEspecifica.Sigla}" name="Sigla" ng-model="metaEspecifica.Sigla" required maxlength="10">
+                <input type="text" class="form-control" ng-class="{'validation-error' : formModelo.$submitted && !modelo.Sigla}" name="Sigla" ng-model="modelo.Sigla" required maxlength="10">
             </div>
             <!-- END SIGLA -->
-            <!-- ÁREA PROCESSO -->
+            <!-- META ESPECIFICA -->
             <div class="col-md-12">
                 <p class="title"><strong>ÁREA PROCESSO: *</strong> </p>
-                <ng-messages ng-if="formMetaEspecifica.$submitted"
-                             for="formMetaEspecifica.AreaProcesso.$error">
+                <ng-messages ng-if="formModelo.$submitted"
+                             for="formModelo.AreaProcesso.$error">
                     <ng-message when="required" class="error-message">
                         <p class="bg-danger"><i class="fa fa-warning"></i> Este campo é obrigatório</p>
                     </ng-message>
                 </ng-messages>
             </div>
             <div class="col-md-12">
-                <select class="form-control" name="MetaEspecifica" ng-model="metaEspecifica.AreaProcesso" ng-options="areaProcesso.Nome for areaProcesso in areaProcessoList" ng-class="(formMetaEspecifica.$submitted && !metaEspecifica.AreaProcesso) ? 'validation-error' : ''" required>
+                <select class="form-control" name="AreaProcesso" ng-model="modelo.AreaProcesso" ng-options="areaProcesso.Nome for areaProcesso in areaProcessoList" ng-class="(formModelo.$submitted && !modelo.AreaProcesso) ? 'validation-error' : ''" required>
                     <option value="">Selecione...</option>
                 </select>
-            </div>
-            <!-- END ÁREA PROCESSO -->            
+            </div>     
+            <!-- END META ESPECIFICA -->            
             <!-- DESCRICAO -->
             <div class="col-md-12">
                 <p class="title"><strong>DESCRIÇÃO: </strong> </p>
-                <textarea class="form-control" name="Descricao" ng-model="metaEspecifica.Descricao"></textarea>
+                <textarea class="form-control" name="Descricao" ng-model="modelo.Descricao"></textarea>
             </div>
             <!-- END DESCRICAO -->
-
         </div>
 
         <div class="dialog-footer">
@@ -58,9 +57,9 @@
                 <i class="requiredAlign">(*) Campos obrigatórios</i>
             </div>
             <div class="col-md-7 text-right">
-                <button type="reset" value="Limpar" class="btn btn-link" ng-if="(action == 'I' || action == 'U')" ng-click="Reset(formMetaEspecifica)">Limpar</button>
+                <button type="reset" value="Limpar" class="btn btn-link" ng-if="(action == 'I' || action == 'U')" ng-click="Reset(formModelo)">Limpar</button>
                 <button type="button" class="btn btn-default" ng-click="closeThisDialog()"><i class="fa fa-times"></i> Cancelar</button>
-                <button type="submit" class="btn btn-primary" ng-click="Save(action, formMetaEspecifica)" ng-enter="confirmEdit(action, formMetaEspecifica)"><i class="fa fa-floppy-o"></i> Salvar</button>
+                <button type="submit" class="btn btn-primary" ng-click="Save(action, formModelo)" ng-enter="confirmEdit(action, formModelo)"><i class="fa fa-floppy-o"></i> Salvar</button>
             </div>
         </div>
     </form>

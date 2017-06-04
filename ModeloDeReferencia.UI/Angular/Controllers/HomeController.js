@@ -21,5 +21,8 @@
     $scope.openPraticaEspecifica = function () {
         $location.path('/praticaEspecifica');
     };
+    $scope.openModelo = function () {
+        $location.path('/modelo');
+    }
     $scope.init();
 }]);

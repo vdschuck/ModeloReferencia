@@ -18,7 +18,7 @@ namespace ModeloDeReferencia.DTO
 
         public int AreaProcessoId { get; set; }
 
-        public virtual AreaProcesso AreaPrcesso { get; set; }
+        public virtual AreaProcesso AreaProcesso { get; set; }
 
     }
 }

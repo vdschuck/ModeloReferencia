@@ -46,6 +46,14 @@
             Update:             'PraticaEspecifica/Update',
             Delete:             'PraticaEspecifica/Delete',
             GetAllSmallTypes:   'PraticaEspecifica/GetAllSmallTypes'
+        },
+        Modelo: {
+            GetAll:             'Modelo/GetAll',
+            GetById:            'Modelo/GetById',
+            Insert:             'Modelo/Insert',
+            Update:             'Modelo/Update',
+            Delete:             'Modelo/Delete',
+            GetAllSmallTypes:   'Modelo/GetAllSmallTypes'
         }
     };
 

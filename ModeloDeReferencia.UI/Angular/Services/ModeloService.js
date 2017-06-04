@@ -1,7 +1,7 @@
-﻿app.service('PraticaEspecificaService', ['$resource', '$q', 'Url', function ($resource, $q, Url) {
+﻿app.service('ModeloService', ['$resource', '$q', 'Url', function ($resource, $q, Url) {
     return {
         getAll: function () {
-            var resource = $resource(Url.PraticaEspecifica.GetAll);
+            var resource = $resource(Url.Modelo.GetAll);
             var deferred = $q.defer();
 
             resource.get(
@@ -14,11 +14,11 @@
 
             return deferred.promise;
         },
-        getById: function (PraticaEspecifica) {
-            var resource = $resource(Url.PraticaEspecifica.GetById);
+        getById: function (Modelo) {
+            var resource = $resource(Url.Modelo.GetById);
             var deferred = $q.defer();
 
-            resource.get(PraticaEspecifica,
+            resource.get(Modelo,
                 function (data) {
                     return deferred.resolve(data);
                 },
@@ -28,11 +28,11 @@
 
             return deferred.promise;
         },
-        insert: function (PraticaEspecifica) {
-            var resource = $resource(Url.PraticaEspecifica.Insert);
+        insert: function (Modelo) {
+            var resource = $resource(Url.Modelo.Insert);
             var deferred = $q.defer();
 
-            resource.save(PraticaEspecifica,
+            resource.save(Modelo,
                 function (data) {
                     return deferred.resolve(data);
                 },
@@ -42,11 +42,11 @@
 
             return deferred.promise;
         },
-        update: function (PraticaEspecifica) {
-            var resource = $resource(Url.PraticaEspecifica.Update);
+        update: function (Modelo) {
+            var resource = $resource(Url.Modelo.Update);
             var deferred = $q.defer();
 
-            resource.save(PraticaEspecifica,
+            resource.save(Modelo,
                 function (data) {
                     return deferred.resolve(data);
                 },
@@ -56,11 +56,11 @@
 
             return deferred.promise;
         },
-        delete: function (PraticaEspecifica) {
-            var resource = $resource(Url.PraticaEspecifica.Delete);
+        delete: function (Modelo) {
+            var resource = $resource(Url.Modelo.Delete);
             var deferred = $q.defer();
 
-            resource.save(PraticaEspecifica,
+            resource.save(Modelo,
                 function (data) {
                     return deferred.resolve(data);
                 },
@@ -71,7 +71,7 @@
             return deferred.promise;
         },
         getAllSmallTypes: function () {
-            var resource = $resource(Url.PraticaEspecifica.GetAllSmallTypes);
+            var resource = $resource(Url.Modelo.GetAllSmallTypes);
             var deferred = $q.defer();
 
             resource.get(

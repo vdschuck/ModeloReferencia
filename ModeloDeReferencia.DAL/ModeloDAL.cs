@@ -63,8 +63,8 @@ namespace ModeloDeReferencia.DAL
             using (var con = OpenConnection())
             {
                 var query = @"INSERT INTO modelo" +
-                            "(nome, sigla, descricao, areaProcessoId, produtoTrabalhoId) VALUES" +
-                            "(@NOME, @SIGLA, @DESCRICAO, @AREAPROCESSOID, @PRODUTOTRABALHOID)";
+                            "(nome, sigla, descricao, areaProcessoId) VALUES" +
+                            "(@NOME, @SIGLA, @DESCRICAO, @AREAPROCESSOID)";
 
                 var parameter = new { NOME = modelo.Nome, SIGLA = modelo.Sigla, DESCRICAO = modelo.Descricao, AREAPROCESSOID = modelo.AreaProcessoId };
 

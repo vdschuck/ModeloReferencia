@@ -21,7 +21,7 @@ namespace ModeloDeReferencia.UI.Controllers
 
             foreach (var _modelo in _listModelo)
             {
-                _modelo.AreaPrcesso = _areaProcessoBLL.GetById(_modelo.AreaProcessoId);                
+                _modelo.AreaProcesso = _areaProcessoBLL.GetById(_modelo.AreaProcessoId);                
             }
 
             var list = new { listModelo = _listModelo };

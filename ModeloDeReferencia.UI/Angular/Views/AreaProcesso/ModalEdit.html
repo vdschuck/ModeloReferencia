@@ -14,7 +14,7 @@
                         <p class="bg-danger"><i class="fa fa-warning"></i> Este campo é obrigatório</p>
                     </ng-message>
                 </ng-messages>
-                <input type="text" class="form-control" ng-class="{'validation-error' : formAreaProcesso.$submitted && !areaProcesso.Nome}" name="Nome" ng-model="areaProcesso.Nome" required maxlength="50">
+                <input type="text" class="form-control" ng-class="{'validation-error' : formAreaProcesso.$submitted && !areaProcesso.Nome}" name="Nome" ng-model="areaProcesso.Nome" required maxlength="100">
             </div>
             <!-- END NOME -->
             <!-- SIGLA -->
@@ -25,7 +25,7 @@
                         <p class="bg-danger"><i class="fa fa-warning"></i> Este campo é obrigatório</p>
                     </ng-message>
                 </ng-messages>
-                <input type="text" class="form-control" ng-class="{'validation-error' : formAreaProcesso.$submitted && !areaProcesso.Sigla}" name="Sigla" ng-model="areaProcesso.Sigla" required maxlength="50">
+                <input type="text" class="form-control" ng-class="{'validation-error' : formAreaProcesso.$submitted && !areaProcesso.Sigla}" name="Sigla" ng-model="areaProcesso.Sigla" required maxlength="10">
             </div>
             <!-- END SIGLA -->
             <!-- NÍVEL MATURIDADE -->

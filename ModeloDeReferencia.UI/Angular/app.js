@@ -35,6 +35,10 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($r
             controller: 'PraticaEspecificaController',
             templateUrl: 'Angular/Views/PraticaEspecifica/Index.html'
         })
+        .when('/modelo', {
+            controller: 'ModeloController',
+            templateUrl: 'Angular/Views/Modelo/Index.html'
+        })
         .otherwise({ redirectTo: '/' });
 
     $locationProvider.hashPrefix('');

@@ -45,10 +45,12 @@
     <Compile Include="Interfaces\IAreaProcessoBLL.cs" />
     <Compile Include="Interfaces\ICategoriaBLL.cs" />
     <Compile Include="Interfaces\IMetaEspecificaBLL..cs" />
+    <Compile Include="Interfaces\IModeloBLL.cs" />
     <Compile Include="Interfaces\INivelMaturidadeBLL.cs" />
     <Compile Include="Interfaces\IPraticaEspecificaBLL.cs" />
     <Compile Include="Interfaces\IProdutoTrabalhoBLL.cs" />
     <Compile Include="MetaEspecificaBLL.cs" />
+    <Compile Include="ModeloBLL.cs" />
     <Compile Include="PraticaEspecificaBLL.cs" />
     <Compile Include="ProdutoTrabalhoBLL.cs" />
     <Compile Include="NivelMaturidadeBLL.cs" />
