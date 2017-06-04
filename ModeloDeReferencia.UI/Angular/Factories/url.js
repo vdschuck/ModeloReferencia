@@ -31,6 +31,14 @@
             Delete:             'ProdutoTrabalho/Delete',
             GetAllSmallTypes:   'ProdutoTrabalho/GetAllSmallTypes'
         },
+        MetaEspecifica: {
+            GetAll:             'MetaEspecifica/GetAll',
+            GetById:            'MetaEspecifica/GetById',
+            Insert:             'MetaEspecifica/Insert',
+            Update:             'MetaEspecifica/Update',
+            Delete:             'MetaEspecifica/Delete',
+            GetAllSmallTypes:   'MetaEspecifica/GetAllSmallTypes'
+        }
     };
 
 });

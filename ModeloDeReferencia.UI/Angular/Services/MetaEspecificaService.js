@@ -1,7 +1,7 @@
-﻿app.service('AreaProcessoService', ['$resource', '$q', 'Url', function ($resource, $q, Url) {
+﻿app.service('MetaEspecificaService', ['$resource', '$q', 'Url', function ($resource, $q, Url) {
     return {
         getAll: function () {
-            var resource = $resource(Url.AreaProcesso.GetAll);
+            var resource = $resource(Url.MetaEspecifica.GetAll);
             var deferred = $q.defer();
 
             resource.get(
@@ -14,11 +14,11 @@
 
             return deferred.promise;
         },
-        getById: function (AreaProcesso) {
-            var resource = $resource(Url.AreaProcesso.GetById);
+        getById: function (MetaEspecifica) {
+            var resource = $resource(Url.MetaEspecifica.GetById);
             var deferred = $q.defer();
 
-            resource.get(AreaProcesso,
+            resource.get(MetaEspecifica,
                 function (data) {
                     return deferred.resolve(data);
                 },
@@ -28,11 +28,11 @@
 
             return deferred.promise;
         },
-        insert: function (AreaProcesso) {
-            var resource = $resource(Url.AreaProcesso.Insert);
+        insert: function (MetaEspecifica) {
+            var resource = $resource(Url.MetaEspecifica.Insert);
             var deferred = $q.defer();
 
-            resource.save(AreaProcesso,
+            resource.save(MetaEspecifica,
                 function (data) {
                     return deferred.resolve(data);
                 },
@@ -42,11 +42,11 @@
 
             return deferred.promise;
         },
-        update: function (AreaProcesso) {
-            var resource = $resource(Url.AreaProcesso.Update);
+        update: function (MetaEspecifica) {
+            var resource = $resource(Url.MetaEspecifica.Update);
             var deferred = $q.defer();
 
-            resource.save(AreaProcesso,
+            resource.save(MetaEspecifica,
                 function (data) {
                     return deferred.resolve(data);
                 },
@@ -56,11 +56,11 @@
 
             return deferred.promise;
         },
-        delete: function (AreaProcesso) {
-            var resource = $resource(Url.AreaProcesso.Delete);
+        delete: function (MetaEspecifica) {
+            var resource = $resource(Url.MetaEspecifica.Delete);
             var deferred = $q.defer();
 
-            resource.save(AreaProcesso,
+            resource.save(MetaEspecifica,
                 function (data) {
                     return deferred.resolve(data);
                 },
@@ -71,7 +71,7 @@
             return deferred.promise;
         },
         getAllSmallTypes: function () {
-            var resource = $resource(Url.AreaProcesso.GetAllSmallTypes);
+            var resource = $resource(Url.MetaEspecifica.GetAllSmallTypes);
             var deferred = $q.defer();
 
             resource.get(

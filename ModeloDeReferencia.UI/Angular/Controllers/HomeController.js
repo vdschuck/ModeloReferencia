@@ -3,11 +3,9 @@
     $scope.init = function () {
         $location.path('/');
     };
-
     $scope.openCategoria = function () {
         $location.path('/categoria');
     };
-
     $scope.openNivelMaturidade = function () {
         $location.path('/nivelMaturidade');
     };   
@@ -16,7 +14,10 @@
     };  
     $scope.openProdutoTrabalho = function () {
         $location.path('/produtoTrabalho');
-    };  
+    }; 
+    $scope.openMetaEspecifica = function () {
+        $location.path('/metaEspecifica');
+    }; 
 
     $scope.init();
 }]);
