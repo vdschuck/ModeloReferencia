@@ -99,7 +99,7 @@
                     if (!$scope.clikEvent) {
                         $scope.clikEvent = true;
 
-                        var data = PrepareData(action, $scope.metaEspecifica);
+                        var data = PrepareMetaEspecifica(action, $scope.metaEspecifica);
                         var retorno = null;
 
                         if (action === 'U')
@@ -164,7 +164,7 @@
 
 
 /* -- PREPARE DATA -- */
-function PrepareData(action, data) {
+function PrepareMetaEspecifica(action, data) {
     var metaEspecifica = {
         Nome: data.Nome,
         Sigla: data.Sigla,

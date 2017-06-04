@@ -18,6 +18,10 @@ namespace ModeloDeReferencia.DTO
 
         public int MetaEspecificaId { get; set; }
 
+        public int ProdutoTrabalhoId { get; set; }
+
         public virtual MetaEspecifica MetaEspecifica { get; set; }
+
+        public virtual ProdutoTrabalho ProdutoTrabalho { get; set; }
     }
 }

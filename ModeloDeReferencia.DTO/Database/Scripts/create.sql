@@ -44,8 +44,10 @@ CREATE TABLE pratica_especifica (
 	nome	VARCHAR(100) NOT NULL,
 	descricao VARCHAR(400),
 	metaEspecificaId INT,
+	produtoTrabalhoId INT,
 	PRIMARY KEY (id),
-	FOREIGN KEY (metaEspecificaId) REFERENCES meta_especifica(id)
+	FOREIGN KEY (metaEspecificaId) REFERENCES meta_especifica(id),
+	FOREIGN KEY (produtoTrabalhoId) REFERENCES produto_trabalho(id)
 );
 
 CREATE TABLE produto_trabalho (

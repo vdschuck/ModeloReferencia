@@ -63,10 +63,10 @@ namespace ModeloDeReferencia.DAL
             using (var con = OpenConnection())
             {
                 var query = @"INSERT INTO pratica_especifica" +
-                            "(nome, sigla, descricao, metaEspecificaId) VALUES" +
-                            "(@NOME, @SIGLA, @DESCRICAO, @METAESPECIFICAID)";
+                            "(nome, sigla, descricao, metaEspecificaId, produtoTrabalhoId) VALUES" +
+                            "(@NOME, @SIGLA, @DESCRICAO, @METAESPECIFICAID, @PRODUTOTRABALHOID)";
 
-                var parameter = new { NOME = praticaEspecifica.Nome, SIGLA = praticaEspecifica.Sigla, DESCRICAO = praticaEspecifica.Descricao, METAESPECIFICAID = praticaEspecifica.MetaEspecificaId };
+                var parameter = new { NOME = praticaEspecifica.Nome, SIGLA = praticaEspecifica.Sigla, DESCRICAO = praticaEspecifica.Descricao, METAESPECIFICAID = praticaEspecifica.MetaEspecificaId, PRODUTOTRABALHOID = praticaEspecifica.ProdutoTrabalhoId };
 
                 result = con.Execute(query.ToString(), parameter);
                 con.Dispose();
@@ -85,10 +85,11 @@ namespace ModeloDeReferencia.DAL
                              "nome = @NOME, " +
                              "sigla = @SIGLA, " +
                              "descricao = @DESCRICAO, " +
-                             "metaEspecificaId = @METAESPECIFICAID " +                             
+                             "metaEspecificaId = @METAESPECIFICAID ," +
+                             "produtoTrabalhoId = @PRODUTOTRABALHOID " +
                              "WHERE id = @ID";
 
-                var parameter = new { ID = praticaEspecifica.Id,  NOME = praticaEspecifica.Nome, SIGLA = praticaEspecifica.Sigla, DESCRICAO = praticaEspecifica.Descricao, METAESPECIFICAID = praticaEspecifica.MetaEspecificaId };
+                var parameter = new { ID = praticaEspecifica.Id,  NOME = praticaEspecifica.Nome, SIGLA = praticaEspecifica.Sigla, DESCRICAO = praticaEspecifica.Descricao, METAESPECIFICAID = praticaEspecifica.MetaEspecificaId, PRODUTOTRABALHOID = praticaEspecifica.ProdutoTrabalhoId };
 
                 result = con.Execute(query.ToString(), parameter);
                 con.Dispose();

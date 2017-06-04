@@ -54,11 +54,13 @@
     $scope.GetAllSmallTypes = function () {
         var response = PraticaEspecificaService.getAllSmallTypes();
         response.then(function (data) {
-            $scope.metaEspecificaList = data.listMetaEspecifica;            
+            $scope.metaEspecificaList = data.listMetaEspecifica;   
+            $scope.produtoTrabalhoList = data.listProdutoTrabalho;
 
             // Selected item when editing
             if ($scope.praticaEspecifica.Id) {
                 $scope.praticaEspecifica.MetaEspecifica = $filter('filter')($scope.metaEspecificaList, { Id: $scope.praticaEspecifica.MetaEspecificaId })[0];
+                $scope.praticaEspecifica.ProdutoTrabalho = $filter('filter')($scope.produtoTrabalhoList, { Id: $scope.praticaEspecifica.ProdutoTrabalhoId })[0];
             }
 
         }, function (error) {
@@ -169,7 +171,8 @@ function PreparePraticaEspecifica(action, data) {
         Nome: data.Nome,
         Sigla: data.Sigla,
         Descricao: data.Descricao,
-        MetaEspecificaId: data.MetaEspecifica.Id        
+        MetaEspecificaId: data.MetaEspecifica.Id,
+        ProdutoTrabalhoId: data.ProdutoTrabalho.Id,
     };
 
     if (action === 'U') {

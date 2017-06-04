@@ -26,7 +26,8 @@
                         <th id="nome">NOME</th>
                         <th id="sigla">SIGLA</th>
                         <th id="descricao">DESCRIÇÃO</th>
-                        <th id="catgoria">META ESPECIFICA</th>                        
+                        <th id="metaEspecifica">META ESPECIFICA</th> 
+                        <th id="produtoTrabalho"> ProdutoTrabalho</th>
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
@@ -35,7 +36,8 @@
                         <td>{{praticaEspecifica.Nome}}</td>
                         <td>{{praticaEspecifica.Sigla}}</td>
                         <td>{{praticaEspecifica.Descricao}}</td>
-                        <td>{{praticaEspecifica.MetaEspecifica.Nome}}</td>                        
+                        <td>{{praticaEspecifica.MetaEspecifica.Nome}}</td>
+                        <td>{{praticaEspecifica.ProdutoTrabalho.Nome}}</td>   
                         <td class="col-md-2 text-center">
                             <div class="grid btn-group" ng-init="praticaEspecifica.caretUp = false">
                                 <button type="button" ng-click="praticaEspecifica.caretUp = !praticaEspecifica.caretUp; $root.adjustMenu($event)" ng-blur="praticaEspecifica.caretUp = false" class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">

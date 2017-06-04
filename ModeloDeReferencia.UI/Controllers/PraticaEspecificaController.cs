@@ -13,7 +13,8 @@ namespace ModeloDeReferencia.UI.Controllers
     public class PraticaEspecificaController : Controller
     {
         private readonly IPraticaEspecificaBLL _praticaEspecificaBLL = new PraticaEspecificaBLL();
-        private readonly IMetaEspecificaBLL _metaEspecificaBLL = new MetaEspecificaBLL();       
+        private readonly IMetaEspecificaBLL _metaEspecificaBLL = new MetaEspecificaBLL();
+        private readonly IProdutoTrabalhoBLL _produtoTrabalhoBLL = new ProdutoTrabalhoBLL();
 
         public ActionResult GetAll()
         {
@@ -21,7 +22,8 @@ namespace ModeloDeReferencia.UI.Controllers
 
             foreach (var _praticaEspecifica in _listPraticaEspecifica)
             {
-                _praticaEspecifica.MetaEspecifica = _metaEspecificaBLL.GetById(_praticaEspecifica.MetaEspecificaId);                
+                _praticaEspecifica.MetaEspecifica = _metaEspecificaBLL.GetById(_praticaEspecifica.MetaEspecificaId);
+                _praticaEspecifica.ProdutoTrabalho = _produtoTrabalhoBLL.GetById(_praticaEspecifica.ProdutoTrabalhoId);
             }
 
             var list = new { listPraticaEspecifica = _listPraticaEspecifica };
@@ -31,9 +33,10 @@ namespace ModeloDeReferencia.UI.Controllers
 
         public ActionResult GetAllSmallTypes()
         {
-            var _listMetaEspecifica = _metaEspecificaBLL.GetAll().OrderBy(x => x.Nome).ToList();            
+            var _listMetaEspecifica = _metaEspecificaBLL.GetAll().OrderBy(x => x.Nome).ToList();
+            var _listProdutoTrabalho = _produtoTrabalhoBLL.GetAll().OrderBy(x => x.Nome).ToList();
 
-            var list = new { listMetaEspecifica = _listMetaEspecifica };
+            var list = new { listMetaEspecifica = _listMetaEspecifica, listProdutoTrabalho = _listProdutoTrabalho };
 
             return Json(list, JsonRequestBehavior.AllowGet);
         }
