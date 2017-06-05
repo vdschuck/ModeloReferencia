@@ -39,6 +39,10 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($r
             controller: 'ModeloController',
             templateUrl: 'Angular/Views/Modelo/Index.html'
         })
+        .when('/nivelCapacidade', {
+            controller: 'NivelCapacidadeController',
+            templateUrl: 'Angular/Views/NivelCapacidade/Index.html'
+        })
         .otherwise({ redirectTo: '/' });
 
     $locationProvider.hashPrefix('');

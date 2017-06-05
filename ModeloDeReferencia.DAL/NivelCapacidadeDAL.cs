@@ -81,7 +81,7 @@ namespace ModeloDeReferencia.DAL
 
             using (var con = OpenConnection())
             {
-                var query = @"UPDATE pratica_especifica SET " +
+                var query = @"UPDATE nivel_capacidade SET " +
                              "nome = @NOME, " +
                              "sigla = @SIGLA, " +
                              "descricao = @DESCRICAO " +                             

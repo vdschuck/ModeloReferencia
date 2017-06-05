@@ -23,6 +23,9 @@
     };
     $scope.openModelo = function () {
         $location.path('/modelo');
+    };
+    $scope.openNivelCapacidade = function () {
+        $location.path('nivelCapacidade');
     }
     $scope.init();
 }]);

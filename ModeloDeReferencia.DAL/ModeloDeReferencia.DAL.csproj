@@ -49,6 +49,7 @@
     <Compile Include="Intefaces\IAreaProcessoDAL.cs" />
     <Compile Include="Intefaces\ICategoriaDAL.cs" />
     <Compile Include="Intefaces\IModeloDAL.cs" />
+    <Compile Include="Intefaces\INivelCapacidadeDAL.cs" />
     <Compile Include="Intefaces\INivelMaturidadeDAL.cs" />
     <Compile Include="Intefaces\IPraticaEspecificaDAL.cs" />
     <Compile Include="Intefaces\IProdutoTrabalhoDAL.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="MetaEspecificaDAL.cs" />
     <Compile Include="ModeloDAL.cs" />
     <Compile Include="MyConnection.cs" />
+    <Compile Include="NivelCapacidadeDAL.cs" />
     <Compile Include="NivelMaturidadeDAL.cs" />
     <Compile Include="PraticaEspecificaDAL.cs" />
     <Compile Include="ProdutoTrabalhoDAL.cs" />

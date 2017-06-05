@@ -146,6 +146,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MetaEpecificaController.cs" />
     <Compile Include="Controllers\ModeloController.cs" />
+    <Compile Include="Controllers\NivelCapacidadeController.cs" />
     <Compile Include="Controllers\NivelMaturidadeController.cs" />
     <Compile Include="Controllers\PraticaEspecificaController.cs" />
     <Compile Include="Controllers\ProdutoTrabalhoController.cs" />
@@ -161,6 +162,7 @@
     <Content Include="Angular\Controllers\HomeController.js" />
     <Content Include="Angular\Controllers\MetaEspecificaController.js" />
     <Content Include="Angular\Controllers\ModeloController.js" />
+    <Content Include="Angular\Controllers\NivelCapacidadeController.js" />
     <Content Include="Angular\Controllers\NivelMaturidadeController.js" />
     <Content Include="Angular\Controllers\PraticaEspecificaController.js" />
     <Content Include="Angular\Controllers\ProdutoTrabalhoController.js" />
@@ -173,6 +175,7 @@
     <Content Include="Angular\Services\CategoriaService.js" />
     <Content Include="Angular\Services\MetaEspecificaService.js" />
     <Content Include="Angular\Services\ModeloService.js" />
+    <Content Include="Angular\Services\NivelCapacidadeService.js" />
     <Content Include="Angular\Services\NivelMaturidadeService.js" />
     <Content Include="Angular\Services\PraticaEspecificaService.js" />
     <Content Include="Angular\Services\ProdutoTrabalhoService.js" />
@@ -185,6 +188,8 @@
     <Content Include="Angular\Views\MetaEspecifica\ModalEdit.html" />
     <Content Include="Angular\Views\Modelo\Index.html" />
     <Content Include="Angular\Views\Modelo\ModalEdit.html" />
+    <Content Include="Angular\Views\NivelCapacidade\Index.html" />
+    <Content Include="Angular\Views\NivelCapacidade\ModalEdit.html" />
     <Content Include="Angular\Views\NivelMaturidade\Index.html" />
     <Content Include="Angular\Views\NivelMaturidade\ModalEdit.html" />
     <Content Include="Angular\Views\PraticaEspecifica\Index.html" />

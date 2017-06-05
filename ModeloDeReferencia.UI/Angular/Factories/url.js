@@ -54,6 +54,13 @@
             Update:             'Modelo/Update',
             Delete:             'Modelo/Delete',
             GetAllSmallTypes:   'Modelo/GetAllSmallTypes'
+        },
+        NivelCapacidade: {
+            GetAll:             'NivelCapacidade/GetAll',
+            GetById:            'NivelCapacidade/GetById',
+            Insert:             'NivelCapacidade/Insert',
+            Update:             'NivelCapacidade/Update',
+            Delete:             'NivelCapacidade/Delete'           
         }
     };
 
