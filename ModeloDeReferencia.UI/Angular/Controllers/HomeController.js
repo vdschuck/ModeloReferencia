@@ -25,7 +25,10 @@
         $location.path('/modelo');
     };
     $scope.openNivelCapacidade = function () {
-        $location.path('nivelCapacidade');
+        $location.path('/nivelCapacidade');
+    };
+    $scope.openMetaGenerica = function () {
+        $location.path('/metaGenerica');
     }
     $scope.init();
 }]);

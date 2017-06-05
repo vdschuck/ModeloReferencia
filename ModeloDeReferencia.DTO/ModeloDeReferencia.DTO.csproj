@@ -43,6 +43,7 @@
     <Compile Include="AreaProcesso.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="MetaEspecifica.cs" />
+    <Compile Include="MetaGenerica.cs" />
     <Compile Include="Modelo.cs" />
     <Compile Include="NivelCapacidade.cs" />
     <Compile Include="NivelMaturidade.cs" />

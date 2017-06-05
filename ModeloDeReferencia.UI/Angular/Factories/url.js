@@ -61,6 +61,14 @@
             Insert:             'NivelCapacidade/Insert',
             Update:             'NivelCapacidade/Update',
             Delete:             'NivelCapacidade/Delete'           
+        },
+        MetaGenerica: {
+            GetAll:             'MetaGenerica/GetAll',
+            GetById:            'MetaGenerica/GetById',
+            Insert:             'MetaGenerica/Insert',
+            Update:             'MetaGenerica/Update',
+            Delete:             'MetaGenerica/Delete',
+            GetAllSmallTypes:   'MetaGenerica/GetAllSmallTypes'
         }
     };
 

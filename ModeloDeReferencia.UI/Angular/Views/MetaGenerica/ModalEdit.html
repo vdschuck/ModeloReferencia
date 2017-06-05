@@ -1,0 +1,86 @@
+﻿<div class="dialog-custom" ng-init="GetAllSmallTypes()">
+
+    <div class="dialog-heading">
+        <h4 class="text-center"><strong>{{action == 'I' ? 'CADASTRAR' : 'EDITAR'}} META GENÉRICA</strong></h4>
+    </div>
+
+    <form name="formMetaGenerica" ng-submit="" novalidate>
+        <div class="dialog-body">
+            <!-- NOME -->
+            <div class="col-md-12">
+                <p class="title"><strong>NOME: *</strong> </p>
+                <ng-messages ng-if="formMetaGenerica.$submitted" for="formMetaGenerica.Nome.$error">
+                    <ng-message when="required" class="error-message">
+                        <p class="bg-danger"><i class="fa fa-warning"></i> Este campo é obrigatório</p>
+                    </ng-message>
+                </ng-messages>
+                <input type="text" class="form-control" ng-class="{'validation-error' : formMetaGenerica.$submitted && !metaGenerica.Nome}" name="Nome" ng-model="metaGenerica.Nome" required maxlength="100">
+            </div>
+            <!-- END NOME -->
+            <!-- SIGLA -->
+            <div class="col-md-12">
+                <p class="title"><strong>SIGLA: *</strong> </p>
+                <ng-messages ng-if="formMetaGenerica.$submitted" for="formMetaGenerica.Sigla.$error">
+                    <ng-message when="required" class="error-message">
+                        <p class="bg-danger"><i class="fa fa-warning"></i> Este campo é obrigatório</p>
+                    </ng-message>
+                </ng-messages>
+                <input type="text" class="form-control" ng-class="{'validation-error' : formMetaGenerica.$submitted && !metaGenerica.Sigla}" name="Sigla" ng-model="metaGenerica.Sigla" required maxlength="10">
+            </div>
+            <!-- END SIGLA -->
+            <!-- NIVEL CAPACIDADE -->
+            <div class="col-md-12">
+                <p class="title"><strong>NÍVEL CAPACIDADE: *</strong> </p>
+                <ng-messages ng-if="formMetaGenerica.$submitted"
+                             for="formMetaGenerica.NivelCapacidade.$error">
+                    <ng-message when="required" class="error-message">
+                        <p class="bg-danger"><i class="fa fa-warning"></i> Este campo é obrigatório</p>
+                    </ng-message>
+                </ng-messages>
+            </div>
+            <div class="col-md-12">
+                <select class="form-control" name="NivelCapacidade" ng-model="metaGenerica.NivelCapacidade" ng-options="nivelCapacidade.Nome for nivelCapacidade in nivelCapacidadeList" ng-class="(formMetaGenerica.$submitted && !metaGenerica.NivelCapacidade) ? 'validation-error' : ''" required>
+                    <option value="">Selecione...</option>
+                </select>
+            </div>
+            <!-- END NIVEL CAPACIDADE -->
+            <!-- MODELO -->
+            <div class="col-md-12">
+                <p class="title"><strong>MODELO: *</strong> </p>
+                <ng-messages ng-if="formMetaGenerica.$submitted"
+                             for="formMetaGenerica.Modelo.$error">
+                    <ng-message when="required" class="error-message">
+                        <p class="bg-danger"><i class="fa fa-warning"></i> Este campo é obrigatório</p>
+                    </ng-message>
+                </ng-messages>
+            </div>
+            <div class="col-md-12">
+                <select class="form-control" name="Modelo" ng-model="metaGenerica.Modelo" ng-options="modelo.Nome for modelo in modeloList" ng-class="(formMetaGenerica.$submitted && !metaGenerica.Modelo) ? 'validation-error' : ''" required>
+                    <option value="">Selecione...</option>
+                </select>
+            </div>
+            <!-- END MODELO -->
+            <!-- DESCRICAO -->
+            <div class="col-md-12">
+                <p class="title"><strong>DESCRIÇÃO: </strong> </p>
+                <textarea class="form-control" name="Descricao" ng-model="metaGenerica.Descricao"></textarea>
+            </div>
+            <!-- END DESCRICAO -->
+
+        </div>
+
+        <div class="dialog-footer">
+            <div class="col-md-5">
+                <i class="requiredAlign">(*) Campos obrigatórios</i>
+            </div>
+            <div class="col-md-7 text-right">
+                <button type="reset" value="Limpar" class="btn btn-link" ng-if="(action == 'I' || action == 'U')" ng-click="Reset(formMetaGenerica)">Limpar</button>
+                <button type="button" class="btn btn-default" ng-click="closeThisDialog()"><i class="fa fa-times"></i> Cancelar</button>
+                <button type="submit" class="btn btn-primary" ng-click="Save(action, formMetaGenerica)" ng-enter="confirmEdit(action, formMetaGenerica)"><i class="fa fa-floppy-o"></i> Salvar</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+

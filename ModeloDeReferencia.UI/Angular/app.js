@@ -43,6 +43,10 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($r
             controller: 'NivelCapacidadeController',
             templateUrl: 'Angular/Views/NivelCapacidade/Index.html'
         })
+        .when('/metaGenerica', {
+            controller: 'MetaGenericaController',
+            templateUrl: 'Angular/Views/MetaGenerica/Index.html'
+        })
         .otherwise({ redirectTo: '/' });
 
     $locationProvider.hashPrefix('');

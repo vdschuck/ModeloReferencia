@@ -55,7 +55,7 @@
                 </ng-messages>
             </div>
             <div class="col-md-12">
-                <select class="form-control" name="MetaEspecifica" ng-model="praticaEspecifica.ProdutoTrabalho" ng-options="produtoTrabalho.Nome for produtoTrabalho in produtoTrabalhoList" ng-class="(formPraticaEspecifica.$submitted && !praticaEspecifica.ProdutoTrabalho) ? 'validation-error' : ''" required>
+                <select class="form-control" name="ProdutoTrabalho" ng-model="praticaEspecifica.ProdutoTrabalho" ng-options="produtoTrabalho.Nome for produtoTrabalho in produtoTrabalhoList" ng-class="(formPraticaEspecifica.$submitted && !praticaEspecifica.ProdutoTrabalho) ? 'validation-error' : ''" required>
                     <option value="">Selecione...</option>
                 </select>
             </div>
