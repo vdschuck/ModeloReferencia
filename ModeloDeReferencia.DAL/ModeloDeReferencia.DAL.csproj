@@ -55,6 +55,7 @@
     <Compile Include="Intefaces\IPraticaEspecificaDAL.cs" />
     <Compile Include="Intefaces\IProdutoTrabalhoDAL.cs" />
     <Compile Include="Intefaces\IMetaEspecificaDAL.cs" />
+    <Compile Include="Intefaces\ITemplateDAL.cs" />
     <Compile Include="MetaEspecificaDAL.cs" />
     <Compile Include="MetaGenericaDAL.cs" />
     <Compile Include="ModeloDAL.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="PraticaEspecificaDAL.cs" />
     <Compile Include="ProdutoTrabalhoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TemplateDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

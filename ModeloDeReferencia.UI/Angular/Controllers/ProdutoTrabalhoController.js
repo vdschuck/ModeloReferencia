@@ -1,4 +1,4 @@
-﻿app.controller('ProdutoTrabalhoController', ["$scope", "$filter", "$timeout", "ngDialog", "Url", "ProdutoTrabalhoService", function ($scope, $filter, $timeout, ngDialog, Url, ProdutoTrabalhoService) {
+﻿app.controller('ProdutoTrabalhoController', ["$scope", "$filter", "$timeout", "ngDialog", "Url", "ProdutoTrabalhoService", "TemplateService", function ($scope, $filter, $timeout, ngDialog, Url, ProdutoTrabalhoService, TemplateService) {
 
     $scope.produtoTrabalhoList = [];
 
@@ -84,7 +84,9 @@
                     if (!$scope.clikEvent) {
                         $scope.clikEvent = true;
 
-                        var data = PrepareData(action, $scope.produtoTrabalho);
+                       // $scope.Update(formProdutoTrabalho.Template);
+
+                        var data = PrepareProdutoTrabalho(action, $scope.produtoTrabalho);
                         var retorno = null;
 
                         if (action === 'U')
@@ -145,11 +147,16 @@
         });
     };
 
+    $scope.Update = function (file) {
+       
+        var request = TemplateService.insert(file);
+    };
+
 }]);
 
 
 /* -- PREPARE DATA -- */
-function PrepareData(action, data) {
+function PrepareProdutoTrabalho(action, data) {
     var produtoTrabalho = {
         Nome: data.Nome,
         Template: data.Template       

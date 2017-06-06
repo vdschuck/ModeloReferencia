@@ -144,13 +144,14 @@
     <Compile Include="Controllers\AreaProcessoController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MetaEpecificaController.cs" />
+    <Compile Include="Controllers\MetaEspecificaController.cs" />
     <Compile Include="Controllers\MetaGenericaController.cs" />
     <Compile Include="Controllers\ModeloController.cs" />
     <Compile Include="Controllers\NivelCapacidadeController.cs" />
     <Compile Include="Controllers\NivelMaturidadeController.cs" />
     <Compile Include="Controllers\PraticaEspecificaController.cs" />
     <Compile Include="Controllers\ProdutoTrabalhoController.cs" />
+    <Compile Include="Controllers\TemplateController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -182,6 +183,7 @@
     <Content Include="Angular\Services\NivelMaturidadeService.js" />
     <Content Include="Angular\Services\PraticaEspecificaService.js" />
     <Content Include="Angular\Services\ProdutoTrabalhoService.js" />
+    <Content Include="Angular\Services\TemplateService.js" />
     <Content Include="Angular\Views\AreaProcesso\Index.html" />
     <Content Include="Angular\Views\AreaProcesso\ModalEdit.html" />
     <Content Include="Angular\Views\Categoria\Index.html" />
@@ -1126,6 +1128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\upload\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

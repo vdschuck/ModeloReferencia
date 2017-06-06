@@ -69,7 +69,12 @@
             Update:             'MetaGenerica/Update',
             Delete:             'MetaGenerica/Delete',
             GetAllSmallTypes:   'MetaGenerica/GetAllSmallTypes'
+        },
+        Template: {           
+            Insert:             'Template/Insert'
+            
         }
+
     };
 
 });

@@ -31,7 +31,7 @@ namespace ModeloDeReferencia.BLL
 
         public int Insert(MetaEspecifica metaEspecifica)
         {
-            throw new NotImplementedException();
+            return _metaEspecificaDAL.Insert(metaEspecifica);
         }
 
         public int Update(MetaEspecifica metaEspecifica)

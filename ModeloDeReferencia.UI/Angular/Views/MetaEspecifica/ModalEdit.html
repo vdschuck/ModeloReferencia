@@ -39,7 +39,7 @@
                 </ng-messages>
             </div>
             <div class="col-md-12">
-                <select class="form-control" name="MetaEspecifica" ng-model="metaEspecifica.AreaProcesso" ng-options="areaProcesso.Nome for areaProcesso in areaProcessoList" ng-class="(formMetaEspecifica.$submitted && !metaEspecifica.AreaProcesso) ? 'validation-error' : ''" required>
+                <select class="form-control" name="AreaProcesso" ng-model="metaEspecifica.AreaProcesso" ng-options="areaProcesso.Nome for areaProcesso in areaProcessoList" ng-class="(formMetaEspecifica.$submitted && !metaEspecifica.AreaProcesso) ? 'validation-error' : ''" required>
                     <option value="">Selecione...</option>
                 </select>
             </div>

@@ -54,11 +54,11 @@
     $scope.GetAllSmallTypes = function () {
         var response = MetaEspecificaService.getAllSmallTypes();
         response.then(function (data) {
-            $scope.AreaProcessoList = data.listAreaProcesso;           
+            $scope.areaProcessoList = data.listAreaProcesso;           
 
             // Selected item when editing
             if ($scope.metaEspecifica.Id) {
-                $scope.metaEspecifica.AreaProcesso = $filter('filter')($scope.metaEspecificaList, { Id: $scope.metaEspecificaList.AreaProcessoId })[0];
+                $scope.metaEspecifica.AreaProcesso = $filter('filter')($scope.areaProcessoList, { Id: $scope.metaEspecifica.AreaProcessoId })[0];
             }
 
         }, function (error) {
@@ -169,7 +169,7 @@ function PrepareMetaEspecifica(action, data) {
         Nome: data.Nome,
         Sigla: data.Sigla,
         Descricao: data.Descricao,
-        NivelMaturidadeId: data.AreaProcesso.Id        
+        AreaProcessoId: data.AreaProcesso.Id        
     };
 
     if (action === 'U') {

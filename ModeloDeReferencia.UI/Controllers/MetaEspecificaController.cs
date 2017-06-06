@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace ModeloDeReferencia.UI.Controllers
 {
-    public class MetaEpecificaController : Controller
+    public class MetaEspecificaController : Controller
     {
         private readonly IMetaEspecificaBLL _metaEspecificaBLL = new MetaEspecificaBLL();
         private readonly IAreaProcessoBLL _areaProcessoBLL = new AreaProcessoBLL();
