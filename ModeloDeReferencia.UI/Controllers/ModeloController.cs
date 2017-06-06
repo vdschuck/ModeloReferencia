@@ -12,28 +12,13 @@ namespace ModeloDeReferencia.UI.Controllers
 {
     public class ModeloController : Controller
     {
-        private readonly IModeloBLL _modeloBLL = new ModeloBLL();
-        private readonly IAreaProcessoBLL _areaProcessoBLL = new AreaProcessoBLL();
+        private readonly IModeloBLL _modeloBLL = new ModeloBLL();       
 
         public ActionResult GetAll()
         {
-            var _listModelo = _modeloBLL.GetAll().OrderBy(x => x.Nome).ToList();
-
-            foreach (var _modelo in _listModelo)
-            {
-                _modelo.AreaProcesso = _areaProcessoBLL.GetById(_modelo.AreaProcessoId);                
-            }
+            var _listModelo = _modeloBLL.GetAll().OrderBy(x => x.Nome).ToList();            
 
             var list = new { listModelo = _listModelo };
-
-            return Json(list, JsonRequestBehavior.AllowGet);
-        }
-
-        public ActionResult GetAllSmallTypes()
-        {
-            var _listAreaProcesso = _areaProcessoBLL.GetAll().OrderBy(x => x.Nome).ToList();            
-
-            var list = new { listAreaProcesso = _listAreaProcesso };
 
             return Json(list, JsonRequestBehavior.AllowGet);
         }
@@ -64,6 +49,13 @@ namespace ModeloDeReferencia.UI.Controllers
             var request = _modeloBLL.Delete(Id);
 
             return request > 0 ? new HttpStatusCodeResult(HttpStatusCode.OK) : new HttpStatusCodeResult(HttpStatusCode.NotFound);
+        }
+
+        public ActionResult Show(Modelo modelo)
+        {         
+            
+
+            return Json(JsonRequestBehavior.AllowGet);
         }
     }
 }

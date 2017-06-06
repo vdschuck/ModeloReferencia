@@ -3,9 +3,11 @@ CREATE TABLE area_processo (
 	sigla VARCHAR(10) NOT NULL,
 	nome VARCHAR(100) NOT NULL,
 	descricao VARCHAR(400),
+	modeloId INT,
 	nivelMaturidadeId INT,
 	categoriaId INT, 
 	PRIMARY KEY (id),
 	FOREIGN KEY (nivelMaturidadeId) REFERENCES nivel_maturidade(id),
-	FOREIGN KEY (categoriaId) REFERENCES categoria(id)
+	FOREIGN KEY (categoriaId) REFERENCES categoria(id),
+	FOREIGN KEY (modeloId) REFERENCES modelo(Id)
 );

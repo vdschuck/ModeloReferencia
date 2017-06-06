@@ -20,6 +20,10 @@ namespace ModeloDeReferencia.DTO
 
         public int CategoriaId { get; set; }
 
+        public int ModeloId { get; set; }
+
+        public virtual Modelo Modelo { get; set; }
+
         public virtual NivelMaturidade NivelMaturidade { get; set; }
 
         public virtual Categoria Categoria { get; set; }

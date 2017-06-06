@@ -50,21 +50,6 @@
 
     /* ---------------------------- INSIDE MODAL ---------------------------- */
 
-    /* -- GET ALL SMALL TYPES -- */
-    $scope.GetAllSmallTypes = function () {
-        var response = ModeloService.getAllSmallTypes();
-        response.then(function (data) {
-            $scope.areaProcessoList = data.listAreaProcesso;            
-
-            // Selected item when editing
-            if ($scope.modelo.Id) {
-                $scope.modelo.AreaProcesso = $filter('filter')($scope.areaProcessoList, { Id: $scope.modelo.AreaProcessoId })[0];
-            }
-
-        }, function (error) {
-        });
-    };
-
     /* -- RESET FORM -- */
     $scope.Reset = function (formModelo) {
         $timeout(function () {
@@ -160,6 +145,15 @@
         });
     };
 
+    $scope.Show = function (modelo) {
+        var response = ModeloService.show(modelo);
+        response.then(function (data) {
+            $scope.areaProcessoList = data.listAreaProcesso;           
+
+        }, function (error) {
+        });
+    };
+
 }]);
 
 
@@ -168,8 +162,7 @@ function PrepareModelo(action, data) {
     var modelo = {
         Nome: data.Nome,
         Sigla: data.Sigla,
-        Descricao: data.Descricao,
-        AreaProcessoId: data.AreaProcesso.Id       
+        Descricao: data.Descricao             
     };
 
     if (action === 'U') {

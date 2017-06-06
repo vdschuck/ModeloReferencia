@@ -83,6 +83,20 @@
                 });
 
             return deferred.promise;
+        },
+        show: function (Modelo) {
+            var resource = $resource(Url.Modelo.Show);
+            var deferred = $q.defer();
+
+            resource.get(Modelo,
+                function (data) {
+                    return deferred.resolve(data);
+                },
+                function (response) {
+                    return deferred.reject(response);
+                });
+
+            return deferred.promise;
         }
     };
 }]);

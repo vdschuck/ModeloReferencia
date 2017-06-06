@@ -63,10 +63,10 @@ namespace ModeloDeReferencia.DAL
             using (var con = OpenConnection())
             {
                 var query = @"INSERT INTO area_processo" +
-                            "(nome, sigla, descricao, nivelMaturidadeId, categoriaId) " +
-                            "VALUES(@NOME, @SIGLA, @DESCRICAO, @NIVELMATURIDADEID, @CATEGORIAID)";
+                            "(nome, sigla, descricao, nivelMaturidadeId, categoriaId, modeloId) " +
+                            "VALUES(@NOME, @SIGLA, @DESCRICAO, @NIVELMATURIDADEID, @CATEGORIAID, @MODELOID)";
                
-                var parameter = new { NOME = areaProcesso.Nome, SIGLA = areaProcesso.Sigla, DESCRICAO = areaProcesso.Descricao, CATEGORIAID = areaProcesso.CategoriaId, NIVELMATURIDADEID = areaProcesso.NivelMaturidadeId };
+                var parameter = new { NOME = areaProcesso.Nome, SIGLA = areaProcesso.Sigla, DESCRICAO = areaProcesso.Descricao, CATEGORIAID = areaProcesso.CategoriaId, NIVELMATURIDADEID = areaProcesso.NivelMaturidadeId , MODELOID = areaProcesso.ModeloId };
 
                 result = con.Execute(query.ToString(), parameter);
                 con.Dispose();
@@ -86,10 +86,11 @@ namespace ModeloDeReferencia.DAL
                              "sigla = @SIGLA, " +
                              "descricao = @DESCRICAO, " +
                              "nivelMaturidadeId = @NIVELMATURIDADEID, " +
-                             "categoriaId = @CATEGORIAID " +
+                             "categoriaId = @CATEGORIAID, " +
+                             "modeloId = @MODELOID " +
                              "WHERE id = @ID";
                
-                var parameter = new { ID = areaProcesso.Id, NOME = areaProcesso.Nome, SIGLA = areaProcesso.Sigla, DESCRICAO = areaProcesso.Descricao, CATEGORIAID = areaProcesso.CategoriaId, NIVELMATURIDADEID = areaProcesso.NivelMaturidadeId };
+                var parameter = new { ID = areaProcesso.Id, NOME = areaProcesso.Nome, SIGLA = areaProcesso.Sigla, DESCRICAO = areaProcesso.Descricao, CATEGORIAID = areaProcesso.CategoriaId, NIVELMATURIDADEID = areaProcesso.NivelMaturidadeId, MODELOID = areaProcesso.ModeloId };
                 
                 result = con.Execute(query.ToString(), parameter);
                 con.Dispose();

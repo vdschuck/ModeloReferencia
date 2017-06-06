@@ -53,7 +53,8 @@
             Insert:             'Modelo/Insert',
             Update:             'Modelo/Update',
             Delete:             'Modelo/Delete',
-            GetAllSmallTypes:   'Modelo/GetAllSmallTypes'
+            GetAllSmallTypes:   'Modelo/GetAllSmallTypes',
+            Show:               'Modelo/Show'
         },
         NivelCapacidade: {
             GetAll:             'NivelCapacidade/GetAll',

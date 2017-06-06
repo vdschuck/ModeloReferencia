@@ -55,12 +55,14 @@
         var response = AreaProcessoService.getAllSmallTypes();
         response.then(function (data) {
             $scope.categoriaList = data.listCategoria;
-            $scope.nivelMaturidadeList = data.listNivelMaturidade;    
+            $scope.nivelMaturidadeList = data.listNivelMaturidade;
+            $scope.modeloList = data.listModelo;  
             
             // Selected item when editing
             if ($scope.areaProcesso.Id) {
                 $scope.areaProcesso.Categoria = $filter('filter')($scope.categoriaList, { Id: $scope.areaProcesso.CategoriaId })[0];
                 $scope.areaProcesso.NivelMaturidade = $filter('filter')($scope.nivelMaturidadeList, { Id: $scope.areaProcesso.NivelMaturidadeId })[0];                
+                $scope.areaProcesso.Modelo = $filter('filter')($scope.modeloList, { Id: $scope.areaProcesso.ModeloId })[0];                
             }
 
         }, function (error) {
@@ -172,7 +174,8 @@ function PrepareAreaProcesso(action, data) {
         Sigla: data.Sigla,
         Descricao: data.Descricao,
         NivelMaturidadeId: data.NivelMaturidade.Id,
-        CategoriaId: data.Categoria.Id
+        CategoriaId: data.Categoria.Id,
+        ModeloId: data.Modelo.Id
     };
 
     if (action === 'U') {

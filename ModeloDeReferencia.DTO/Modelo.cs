@@ -14,11 +14,7 @@ namespace ModeloDeReferencia.DTO
 
         public string Sigla { get; set; }
 
-        public string Descricao { get; set; }
-
-        public int AreaProcessoId { get; set; }
-
-        public virtual AreaProcesso AreaProcesso { get; set; }
+        public string Descricao { get; set; }       
 
     }
 }

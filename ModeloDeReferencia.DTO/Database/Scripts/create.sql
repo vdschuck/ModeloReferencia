@@ -16,16 +16,26 @@ CREATE TABLE nivel_maturidade (
 	PRIMARY KEY (id)	
 );
 
+CREATE TABLE modelo (
+	id INT IDENTITY(1,1) NOT NULL,
+	sigla VARCHAR(10) NOT NULL,
+	nome VARCHAR(100) NOT NULL,
+	descricao VARCHAR(400),	
+	PRIMARY KEY (id)	
+);
+
 CREATE TABLE area_processo (
 	id INT IDENTITY(1,1) NOT NULL,
 	sigla VARCHAR(10) NOT NULL,
 	nome VARCHAR(100) NOT NULL,
 	descricao VARCHAR(400),
+	modeloId INT,
 	nivelMaturidadeId INT,
 	categoriaId INT, 
 	PRIMARY KEY (id),
 	FOREIGN KEY (nivelMaturidadeId) REFERENCES nivel_maturidade(id),
-	FOREIGN KEY (categoriaId) REFERENCES categoria(id)
+	FOREIGN KEY (categoriaId) REFERENCES categoria(id),
+	FOREIGN KEY (modeloId) REFERENCES modelo(Id)
 );
 
 CREATE TABLE meta_especifica (
@@ -63,16 +73,6 @@ CREATE TABLE nivel_capacidade (
 	nome VARCHAR(100) NOT NULL,
 	descricao VARCHAR(400),
 	PRIMARY KEY (id)	
-);
-
-CREATE TABLE modelo (
-	id INT IDENTITY(1,1) NOT NULL,
-	sigla VARCHAR(10) NOT NULL,
-	nome VARCHAR(100) NOT NULL,
-	descricao VARCHAR(400),
-	areaProcessoId INT,	
-	PRIMARY KEY (id),
-	FOREIGN KEY (areaProcessoId) REFERENCES area_processo(id)	
 );
 
 CREATE TABLE meta_generica (

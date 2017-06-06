@@ -15,6 +15,7 @@ namespace ModeloDeReferencia.UI.Controllers
         private readonly IAreaProcessoBLL _areaProcessoBLL = new AreaProcessoBLL();
         private readonly ICategoriaBLL _categoriaBLL = new CategoriaBLL();
         private readonly INivelMaturidadeBLL _nivelMaturidadeBLL = new NivelMaturidadeBLL();
+        private readonly IModeloBLL _modeloBLL = new ModeloBLL();
 
         public ActionResult GetAll()
         {
@@ -24,6 +25,7 @@ namespace ModeloDeReferencia.UI.Controllers
             {
                 _areaProcesso.NivelMaturidade = _nivelMaturidadeBLL.GetById(_areaProcesso.NivelMaturidadeId);
                 _areaProcesso.Categoria = _categoriaBLL.GetById(_areaProcesso.CategoriaId);
+                _areaProcesso.Modelo = _modeloBLL.GetById(_areaProcesso.ModeloId);
             }
 
             var list = new { listAreaProcesso = _listAreaProcesso };
@@ -34,9 +36,10 @@ namespace ModeloDeReferencia.UI.Controllers
         public ActionResult GetAllSmallTypes()
         {
             var _listCategoria = _categoriaBLL.GetAll().OrderBy(x => x.Nome).ToList();
-            var _listNivelMaturidade = _nivelMaturidadeBLL.GetAll().OrderBy(x => x.Nome).ToList();            
+            var _listNivelMaturidade = _nivelMaturidadeBLL.GetAll().OrderBy(x => x.Nome).ToList();
+            var _listModelo = _modeloBLL.GetAll().OrderBy(x => x.Nome).ToList();
 
-            var list = new {  listCategoria = _listCategoria, listNivelMaturidade = _listNivelMaturidade };
+            var list = new {  listCategoria = _listCategoria, listNivelMaturidade = _listNivelMaturidade, listModelo = _listModelo };
 
             return Json(list, JsonRequestBehavior.AllowGet);
         }

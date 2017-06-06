@@ -1,7 +1,7 @@
 ﻿<div class="dialog-custom" ng-init="GetAllSmallTypes()">
 
     <div class="dialog-heading">
-        <h4 class="text-center"><strong>{{action == 'I' ? 'CADASTRAR' : 'EDITAR'}} AREA PROCESSO</strong></h4>
+        <h4 class="text-center"><strong>{{action == 'I' ? 'CADASTRAR' : 'EDITAR'}} ÁREA PROCESSO</strong></h4>
     </div>
 
     <form name="formAreaProcesso" ng-submit="" novalidate>
@@ -60,6 +60,22 @@
                 </select>
             </div>
             <!-- END CATEGORIA -->
+            <!-- MODELO -->
+            <div class="col-md-12">
+                <p class="title"><strong>MODELO: *</strong> </p>
+                <ng-messages ng-if="formAreaProcesso.$submitted"
+                             for="formAreaProcesso.Modelo.$error">
+                    <ng-message when="required" class="error-message">
+                        <p class="bg-danger"><i class="fa fa-warning"></i> Este campo é obrigatório</p>
+                    </ng-message>
+                </ng-messages>
+            </div>
+            <div class="col-md-12">
+                <select class="form-control" name="Modelo" ng-model="areaProcesso.Modelo" ng-options="modelo.Nome for modelo in modeloList" ng-class="(formAreaProcesso.$submitted && !areaProcesso.Modelo) ? 'validation-error' : ''" required>
+                    <option value="">Selecione...</option>
+                </select>
+            </div>
+            <!-- END MODELO -->
             <!-- DESCRICAO -->
             <div class="col-md-12">
                 <p class="title"><strong>DESCRIÇÃO: </strong> </p>

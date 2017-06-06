@@ -27,23 +27,7 @@
                 </ng-messages>
                 <input type="text" class="form-control" ng-class="{'validation-error' : formModelo.$submitted && !modelo.Sigla}" name="Sigla" ng-model="modelo.Sigla" required maxlength="10">
             </div>
-            <!-- END SIGLA -->
-            <!-- META ESPECIFICA -->
-            <div class="col-md-12">
-                <p class="title"><strong>ÁREA PROCESSO: *</strong> </p>
-                <ng-messages ng-if="formModelo.$submitted"
-                             for="formModelo.AreaProcesso.$error">
-                    <ng-message when="required" class="error-message">
-                        <p class="bg-danger"><i class="fa fa-warning"></i> Este campo é obrigatório</p>
-                    </ng-message>
-                </ng-messages>
-            </div>
-            <div class="col-md-12">
-                <select class="form-control" name="AreaProcesso" ng-model="modelo.AreaProcesso" ng-options="areaProcesso.Nome for areaProcesso in areaProcessoList" ng-class="(formModelo.$submitted && !modelo.AreaProcesso) ? 'validation-error' : ''" required>
-                    <option value="">Selecione...</option>
-                </select>
-            </div>     
-            <!-- END META ESPECIFICA -->            
+            <!-- END SIGLA -->                     
             <!-- DESCRICAO -->
             <div class="col-md-12">
                 <p class="title"><strong>DESCRIÇÃO: </strong> </p>

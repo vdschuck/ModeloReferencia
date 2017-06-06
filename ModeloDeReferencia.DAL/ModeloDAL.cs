@@ -63,10 +63,10 @@ namespace ModeloDeReferencia.DAL
             using (var con = OpenConnection())
             {
                 var query = @"INSERT INTO modelo" +
-                            "(nome, sigla, descricao, areaProcessoId) VALUES" +
-                            "(@NOME, @SIGLA, @DESCRICAO, @AREAPROCESSOID)";
+                            "(nome, sigla, descricao) VALUES" +
+                            "(@NOME, @SIGLA, @DESCRICAO)";
 
-                var parameter = new { NOME = modelo.Nome, SIGLA = modelo.Sigla, DESCRICAO = modelo.Descricao, AREAPROCESSOID = modelo.AreaProcessoId };
+                var parameter = new { NOME = modelo.Nome, SIGLA = modelo.Sigla, DESCRICAO = modelo.Descricao };
 
                 result = con.Execute(query.ToString(), parameter);
                 con.Dispose();
@@ -84,11 +84,10 @@ namespace ModeloDeReferencia.DAL
                 var query = @"UPDATE modelo SET " +
                              "nome = @NOME, " +
                              "sigla = @SIGLA, " +
-                             "descricao = @DESCRICAO, " +
-                             "areaProcessoId = @AREAPROCESSOID " +                             
+                             "descricao = @DESCRICAO " +                                                        
                              "WHERE id = @ID";
 
-                var parameter = new { ID = modelo.Id, NOME = modelo.Nome, SIGLA = modelo.Sigla, DESCRICAO = modelo.Descricao, AREAPROCESSOID = modelo.AreaProcessoId };
+                var parameter = new { ID = modelo.Id, NOME = modelo.Nome, SIGLA = modelo.Sigla, DESCRICAO = modelo.Descricao };
 
                 result = con.Execute(query.ToString(), parameter);
                 con.Dispose();
