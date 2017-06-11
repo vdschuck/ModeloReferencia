@@ -11,7 +11,9 @@ namespace ModeloDeReferencia.BLL.Interfaces
     {
         IEnumerable<AreaProcesso> GetAll();
 
-        AreaProcesso GetById(int Id);       
+        AreaProcesso GetById(int Id);
+
+        IEnumerable<AreaProcesso> Get(string Parameter, int Value);
 
         int Insert(AreaProcesso areaProcesso);
 

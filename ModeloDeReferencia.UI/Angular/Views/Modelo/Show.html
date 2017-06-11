@@ -1,0 +1,20 @@
+﻿<div class="dialog-custom" ng-init="Show()">
+
+    <div class="dialog-heading">
+        <h4 class="text-center"><strong>SHOW MODELO</strong></h4>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="container">
+        <h2>Área Processo</h2>
+        <ul class="list-group" ng-repeat="areaProcesso in areaProcessoList">
+            <li class="list-group-item">{{areaProcesso.Nome}}</li>
+            <li class="list-group-item">{{areaProcesso.Sigla}}</li>
+            <li class="list-group-item">{{areaProcesso.Descricao}}</li>
+        </ul>
+    </div>    
+    <!-- END CONTENT -->
+
+</div>
+
+

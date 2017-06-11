@@ -1,4 +1,4 @@
-﻿app.controller('ModeloController', ["$scope", "$filter", "$timeout", "ngDialog", "Url", "ModeloService", function ($scope, $filter, $timeout, ngDialog, Url, ModeloService) {
+﻿app.controller('ModeloController', ["$scope", "$filter", "$timeout", "$routeParams", "$compile", "$http", "$rootScope", "$route", "$window", "$location", "ngDialog", "Url", "ModeloService", function ($scope, $filter, $timeout, $routeParams, compile, $http, $rootScope, $route, $window, $location, ngDialog, Url, ModeloService) {
 
     $scope.modeloList = [];
 
@@ -145,13 +145,20 @@
         });
     };
 
-    $scope.Show = function (modelo) {
-        var response = ModeloService.show(modelo);
+    /* -- SHOW -- */
+    $scope.OpenShow = function (modelo) {
+        $rootScope.modelo = angular.copy(modelo);
+        $location.path('/modelo/show/' + $rootScope.modelo.Id);
+    };
+
+    $scope.Show = function () { 
+        var response = ModeloService.show($rootScope.modelo);
         response.then(function (data) {
-            $scope.areaProcessoList = data.listAreaProcesso;           
+            $scope.areaProcessoList = data.listAreaProcesso; 
+            $scope.metaGenericaList = data.listMetaGenerica;            
 
         }, function (error) {
-        });
+            });        
     };
 
 }]);

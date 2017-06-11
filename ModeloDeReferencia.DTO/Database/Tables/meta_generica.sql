@@ -7,5 +7,5 @@ CREATE TABLE meta_generica (
 	modeloId INT,
 	PRIMARY KEY (id),
 	FOREIGN KEY (nivelCapacidadeId) REFERENCES nivel_capacidade(id),
-	FOREIGN KEY (nivelCapacidadeId) REFERENCES modelo(id)
+	FOREIGN KEY (modeloId) REFERENCES modelo(id)
 );

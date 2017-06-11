@@ -194,6 +194,7 @@
     <Content Include="Angular\Views\MetaGenerica\Index.html" />
     <Content Include="Angular\Views\MetaGenerica\ModalEdit.html" />
     <Content Include="Angular\Views\Modelo\Index.html" />
+    <Content Include="Angular\Views\Modelo\Show.html" />
     <Content Include="Angular\Views\Modelo\ModalEdit.html" />
     <Content Include="Angular\Views\NivelCapacidade\Index.html" />
     <Content Include="Angular\Views\NivelCapacidade\ModalEdit.html" />

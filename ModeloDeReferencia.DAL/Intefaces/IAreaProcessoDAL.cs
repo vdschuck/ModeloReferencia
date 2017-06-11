@@ -13,6 +13,8 @@ namespace ModeloDeReferencia.DAL.Intefaces
 
         AreaProcesso GetById(int Id);
 
+        IEnumerable<AreaProcesso> Get(string Parameter, int Value);
+
         int Insert(AreaProcesso areaProcesso);
 
         int Update(AreaProcesso areaProcesso);

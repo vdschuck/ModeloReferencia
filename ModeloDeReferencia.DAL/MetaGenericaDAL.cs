@@ -56,6 +56,21 @@ namespace ModeloDeReferencia.DAL
             return result;
         }
 
+        public IEnumerable<MetaGenerica> Get(string Parameter, int Value)
+        {
+            IEnumerable<MetaGenerica> result = null;
+
+            using (var con = OpenConnection())
+            {
+                var query = @"SELECT * FROM meta_generica WHERE " + Parameter + " = " + Value;               
+
+                result = con.Query<MetaGenerica>(query.ToString()).ToList();
+                con.Dispose();
+            }
+
+            return result;
+        }
+
         public int Insert(MetaGenerica metaGenerica)
         {
             var result = 0;

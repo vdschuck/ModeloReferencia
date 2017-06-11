@@ -29,6 +29,11 @@ namespace ModeloDeReferencia.BLL
             return _metaGenericaDAL.GetById(Id);
         }
 
+        public IEnumerable<MetaGenerica> Get(string Parameter, int Value)
+        {
+            return _metaGenericaDAL.Get(Parameter, Value);
+        }
+
         public int Insert(MetaGenerica metaGenerica)
         {
             return _metaGenericaDAL.Insert(metaGenerica);

@@ -85,7 +85,7 @@
             return deferred.promise;
         },
         show: function (Modelo) {
-            var resource = $resource(Url.Modelo.Show);
+            var resource = $resource(Url.Modelo.Show);            
             var deferred = $q.defer();
 
             resource.get(Modelo,

@@ -29,6 +29,11 @@ namespace ModeloDeReferencia.BLL
             return _areaProcessoDAL.GetById(Id);
         }
 
+        public IEnumerable<AreaProcesso> Get(string Parameter, int Value)
+        {
+            return _areaProcessoDAL.Get(Parameter, Value);
+        }
+
         public int Insert(AreaProcesso areaProcesso)
         {
             return _areaProcessoDAL.Insert(areaProcesso);

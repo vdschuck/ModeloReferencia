@@ -56,6 +56,21 @@ namespace ModeloDeReferencia.DAL
             return result;
         }
 
+        public IEnumerable<AreaProcesso> Get(string Parameter, int Value)
+        {
+            IEnumerable<AreaProcesso> result = null;
+
+            using (var con = OpenConnection())
+            {
+                var query = @"SELECT * FROM area_processo WHERE " + Parameter + " = " + Value;                
+
+                result = con.Query<AreaProcesso>(query.ToString()).ToList();
+                con.Dispose();
+            }
+
+            return result;
+        }
+
         public int Insert(AreaProcesso areaProcesso)
         {
             var result = 0;            

@@ -13,6 +13,8 @@ namespace ModeloDeReferencia.BLL.Interfaces
 
         MetaGenerica GetById(int Id);
 
+        IEnumerable<MetaGenerica> Get(string Parameter, int Value);
+
         int Insert(MetaGenerica metaGenerica);
 
         int Update(MetaGenerica metaGenerica);

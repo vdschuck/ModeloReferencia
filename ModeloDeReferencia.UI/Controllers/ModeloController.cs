@@ -12,7 +12,9 @@ namespace ModeloDeReferencia.UI.Controllers
 {
     public class ModeloController : Controller
     {
-        private readonly IModeloBLL _modeloBLL = new ModeloBLL();       
+        private readonly IModeloBLL _modeloBLL = new ModeloBLL();
+        private readonly IAreaProcessoBLL _areaProcessoBLL = new AreaProcessoBLL();
+        private readonly IMetaGenericaBLL _metaGenericaBLL = new MetaGenericaBLL();
 
         public ActionResult GetAll()
         {
@@ -52,10 +54,13 @@ namespace ModeloDeReferencia.UI.Controllers
         }
 
         public ActionResult Show(Modelo modelo)
-        {         
-            
+        {
+            var _listAreaProcesso = _areaProcessoBLL.Get("modeloId", modelo.Id);
+            var _listMetaGenerica = _metaGenericaBLL.Get("modeloId", modelo.Id);
 
-            return Json(JsonRequestBehavior.AllowGet);
+            var list = new { listAreaProcesso = _listAreaProcesso, listMetaGenerica = _listMetaGenerica };
+
+            return Json(list, JsonRequestBehavior.AllowGet);
         }
     }
 }
