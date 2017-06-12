@@ -15,6 +15,12 @@ namespace ModeloDeReferencia.UI.Controllers
         private readonly IModeloBLL _modeloBLL = new ModeloBLL();
         private readonly IAreaProcessoBLL _areaProcessoBLL = new AreaProcessoBLL();
         private readonly IMetaGenericaBLL _metaGenericaBLL = new MetaGenericaBLL();
+        private readonly INivelCapacidadeBLL _nivelCapacidadeBLL = new NivelCapacidadeBLL();
+        private readonly INivelMaturidadeBLL _nivelMaturidadeBLL = new NivelMaturidadeBLL();
+        private readonly ICategoriaBLL _categoriaBLL = new CategoriaBLL();
+        private readonly IMetaEspecificaBLL _metaEspecificaBLL = new MetaEspecificaBLL();
+        private readonly IPraticaEspecificaBLL _praticaEspecificaBLL = new PraticaEspecificaBLL();
+        private readonly IProdutoTrabalhoBLL _produtoTrabalhoBLL = new ProdutoTrabalhoBLL();
 
         public ActionResult GetAll()
         {
@@ -57,8 +63,33 @@ namespace ModeloDeReferencia.UI.Controllers
         {
             var _listAreaProcesso = _areaProcessoBLL.Get("modeloId", modelo.Id);
             var _listMetaGenerica = _metaGenericaBLL.Get("modeloId", modelo.Id);
+            var _listMetaEspecifica = (IEnumerable<MetaEspecifica>) null;
+            var _listPraticaEspecifica= (IEnumerable<PraticaEspecifica>) null;
 
-            var list = new { listAreaProcesso = _listAreaProcesso, listMetaGenerica = _listMetaGenerica };
+            foreach (var _metaGenerica in _listMetaGenerica) {
+                _metaGenerica.NivelCapacidade = _nivelCapacidadeBLL.GetById(_metaGenerica.NivelCapacidadeId);
+            }
+
+            foreach (var _areaProcesso in _listAreaProcesso)
+            {
+                _listMetaEspecifica = _metaEspecificaBLL.Get("areaProcessoId", _areaProcesso.Id);
+
+                _areaProcesso.NivelMaturidade = _nivelMaturidadeBLL.GetById(_areaProcesso.NivelMaturidadeId);
+                _areaProcesso.Categoria = _categoriaBLL.GetById(_areaProcesso.CategoriaId);
+                
+            }
+
+            foreach(var _metaEspecifica in _listMetaEspecifica)
+            {
+                _listPraticaEspecifica = _praticaEspecificaBLL.Get("metaEspecificaId", _metaEspecifica.Id);
+            }
+
+            foreach(var _praticaEspecifica in _listPraticaEspecifica)
+            {
+                _praticaEspecifica.ProdutoTrabalho = _produtoTrabalhoBLL.GetById(_praticaEspecifica.ProdutoTrabalhoId);
+            }
+
+            var list = new { listAreaProcesso = _listAreaProcesso, listMetaGenerica = _listMetaGenerica, listMetaEspecifica = _listMetaEspecifica, listPraticaEspecifica = _listPraticaEspecifica };
 
             return Json(list, JsonRequestBehavior.AllowGet);
         }

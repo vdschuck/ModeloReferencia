@@ -56,6 +56,22 @@ namespace ModeloDeReferencia.DAL
             return result;
         }
 
+
+        public IEnumerable<PraticaEspecifica> Get(string Parameter, int Value)
+        {
+            IEnumerable<PraticaEspecifica> result = null;
+
+            using (var con = OpenConnection())
+            {
+                var query = @"SELECT * FROM pratica_especifica WHERE " + Parameter + " = " + Value;
+
+                result = con.Query<PraticaEspecifica>(query.ToString()).ToList();
+                con.Dispose();
+            }
+
+            return result;
+        }
+
         public int Insert(PraticaEspecifica praticaEspecifica)
         {
             var result = 0;

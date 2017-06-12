@@ -154,11 +154,30 @@
     $scope.Show = function () { 
         var response = ModeloService.show($rootScope.modelo);
         response.then(function (data) {
+            $scope.modelo = $rootScope.modelo;
             $scope.areaProcessoList = data.listAreaProcesso; 
-            $scope.metaGenericaList = data.listMetaGenerica;            
+            $scope.metaGenericaList = data.listMetaGenerica;
+            $scope.metaEspecificaList = data.listMetaEspecifica;
+            $scope.praticaEspecificaList = data.listPraticaEspecifica;
+            $scope.dateOpen = new Date();
 
         }, function (error) {
             });        
+    };
+
+    $scope.Export = function (name) {
+        html2canvas(document.getElementById('exportThis'), {
+            onrendered: function (canvas) {
+                var data = canvas.toDataURL();
+                var docDefinition = {
+                    content: [{
+                        image: data,
+                        width: 500,
+                    }]
+                };
+                pdfMake.createPdf(docDefinition).download("Modelo_" + name + ".pdf");
+            }
+        });
     };
 
 }]);

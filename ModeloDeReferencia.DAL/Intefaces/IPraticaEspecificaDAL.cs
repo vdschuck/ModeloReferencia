@@ -13,6 +13,8 @@ namespace ModeloDeReferencia.DAL.Intefaces
 
         PraticaEspecifica GetById(int Id);
 
+        IEnumerable<PraticaEspecifica> Get(string Parameter, int Value);
+
         int Insert(PraticaEspecifica praticaEspecifica);
 
         int Update(PraticaEspecifica praticaEspecifica);

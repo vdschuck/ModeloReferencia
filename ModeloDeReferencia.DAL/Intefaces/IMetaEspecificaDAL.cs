@@ -13,6 +13,8 @@ namespace ModeloDeReferencia.DAL.Intefaces
 
         MetaEspecifica GetById(int Id);
 
+        IEnumerable<MetaEspecifica> Get(string Parameter, int Value);
+
         int Insert(MetaEspecifica metaEspecifica);
 
         int Update(MetaEspecifica metaEspecifica);

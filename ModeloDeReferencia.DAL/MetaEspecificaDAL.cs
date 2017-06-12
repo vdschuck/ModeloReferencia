@@ -56,6 +56,21 @@ namespace ModeloDeReferencia.DAL
             return result;
         }
 
+        public IEnumerable<MetaEspecifica> Get(string Parameter, int Value)
+        {
+            IEnumerable<MetaEspecifica> result = null;
+
+            using (var con = OpenConnection())
+            {
+                var query = @"SELECT * FROM meta_especifica WHERE " + Parameter + " = " + Value;
+
+                result = con.Query<MetaEspecifica>(query.ToString()).ToList();
+                con.Dispose();
+            }
+
+            return result;
+        }
+
         public int Insert(MetaEspecifica metaEspecifica)
         {
             var result = 0;

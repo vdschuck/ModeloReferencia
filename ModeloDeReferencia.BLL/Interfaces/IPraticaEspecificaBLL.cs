@@ -13,6 +13,8 @@ namespace ModeloDeReferencia.BLL.Interfaces
 
         PraticaEspecifica GetById(int Id);
 
+        IEnumerable<PraticaEspecifica> Get(string Parameter, int Value);
+
         int Insert(PraticaEspecifica praticaEspecifica);
 
         int Update(PraticaEspecifica praticaEspecifica);

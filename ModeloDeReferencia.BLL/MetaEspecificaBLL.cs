@@ -29,6 +29,11 @@ namespace ModeloDeReferencia.BLL
             return _metaEspecificaDAL.GetById(Id);
         }
 
+        public IEnumerable<MetaEspecifica> Get(string Parameter, int Value)
+        {
+            return _metaEspecificaDAL.Get(Parameter, Value);
+        }
+
         public int Insert(MetaEspecifica metaEspecifica)
         {
             return _metaEspecificaDAL.Insert(metaEspecifica);

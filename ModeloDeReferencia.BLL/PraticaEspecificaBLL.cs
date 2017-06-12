@@ -28,6 +28,11 @@ namespace ModeloDeReferencia.BLL
             return _praticaEspecificaDAL.GetById(Id);
         }
 
+        public IEnumerable<PraticaEspecifica> Get(string Parameter, int Value)
+        {
+            return _praticaEspecificaDAL.Get(Parameter, Value);
+        }
+
         public int Insert(PraticaEspecifica praticaEspecifica)
         {
             return _praticaEspecificaDAL.Insert(praticaEspecifica);

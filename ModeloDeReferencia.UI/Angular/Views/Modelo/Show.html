@@ -1,18 +1,165 @@
-﻿<div class="dialog-custom" ng-init="Show()">
+﻿<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 
-    <div class="dialog-heading">
-        <h4 class="text-center"><strong>SHOW MODELO</strong></h4>
+<div class="container" id="exportThis" ng-init="Show()">
+
+    <!-- HEADING -->
+    <div class="heading">
+        <div class="col-md-10">
+            <h4 class="text-center" style="text-transform: uppercase;"><strong>{{modelo.Nome}}</strong></h4>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-info" ng-click="Export(modelo.Nome)">
+                <i class="fa fa-share"></i> Exportar
+            </button>
+        </div>
     </div>
-
+    <!-- END HEADING -->
     <!-- CONTENT -->
-    <div class="container">
-        <h2>Área Processo</h2>
-        <ul class="list-group" ng-repeat="areaProcesso in areaProcessoList">
-            <li class="list-group-item">{{areaProcesso.Nome}}</li>
-            <li class="list-group-item">{{areaProcesso.Sigla}}</li>
-            <li class="list-group-item">{{areaProcesso.Descricao}}</li>
-        </ul>
-    </div>    
+    <div class="content">
+        <strong>MODELO</strong>
+        <div class="divTable">
+            <div class="divTableHeading">
+                <div class="divTableHead">Nome</div>
+                <div class="divTableHead">Sigla</div>
+                <div class="divTableHead">Descrição</div>
+            </div>
+            <div class="divTableBody">
+                <div class="divTableRow">
+                    <div class="divTableCell">{{modelo.Nome}}</div>
+                    <div class="divTableCell">{{modelo.Sigla}}</div>
+                    <div class="divTableCell">{{modelo.Descricao}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="metaGenericaList.length > 0">
+            <strong>META GENÉRICA</strong>
+            <div class="divTable">
+                <div class="divTableHeading">
+                    <div class="divTableHead">Nome</div>
+                    <div class="divTableHead">Sigla</div>
+                    <div class="divTableHead">Descrição</div>
+                </div>
+                <div class="divTableBody" ng-repeat="metaGenerica in metaGenericaList">
+                    <div class="divTableRow">
+                        <div class="divTableCell">{{metaGenerica.Nome}}</div>
+                        <div class="divTableCell">{{metaGenerica.Sigla}}</div>
+                        <div class="divTableCell">{{metaGenerica.Descricao}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <strong>NÍVEL CAPACIDADE</strong>
+            <div class="divTable">
+                <div class="divTableHeading">
+                    <div class="divTableHead">Nome</div>
+                    <div class="divTableHead">Sigla</div>
+                </div>
+                <div class="divTableBody" ng-repeat="metaGenerica in metaGenericaList">
+                    <div class="divTableRow">
+                        <div class="divTableCell">{{metaGenerica.NivelCapacidade.Nome}}</div>
+                        <div class="divTableCell">{{metaGenerica.NivelCapacidade.Sigla}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="areaProcessoList.length > 0">
+            <strong>ÁREA PROCESSO</strong>
+            <div class="divTable">
+                <div class="divTableHeading">
+                    <div class="divTableHead">Nome</div>
+                    <div class="divTableHead">Sigla</div>
+                    <div class="divTableHead">Descrição</div>
+                </div>
+                <div class="divTableBody" ng-repeat="areaProcesso in areaProcessoList">
+                    <div class="divTableRow">
+                        <div class="divTableCell">{{areaProcesso.Nome}}</div>
+                        <div class="divTableCell">{{areaProcesso.Sigla}}</div>
+                        <div class="divTableCell">{{areaProcesso.Descricao}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <strong>NÍVEL MATURIDADE</strong>
+            <div class="divTable">
+                <div class="divTableHeading">
+                    <div class="divTableHead">Nome</div>
+                    <div class="divTableHead">Sigla</div>
+                    <div class="divTableHead">Descrição</div>
+                </div>
+                <div class="divTableBody" ng-repeat="areaProcesso in areaProcessoList">
+                    <div class="divTableRow">
+                        <div class="divTableCell">{{areaProcesso.NivelMaturidade.Nome}}</div>
+                        <div class="divTableCell">{{areaProcesso.NivelMaturidade.Sigla}}</div>
+                        <div class="divTableCell">{{areaProcesso.NivelMaturidade.Descricao}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <strong>CATEGORIA</strong>
+            <div class="divTable">
+                <div class="divTableHeading">
+                    <div class="divTableHead">Nome</div>
+                </div>
+                <div class="divTableBody" ng-repeat="areaProcesso in areaProcessoList">
+                    <div class="divTableRow">
+                        <div class="divTableCell">{{areaProcesso.Categoria.Nome}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <strong>META ESPECÍFICA</strong>
+            <div class="divTable">
+                <div class="divTableHeading">
+                    <div class="divTableHead">Nome</div>
+                    <div class="divTableHead">Sigla</div>
+                    <div class="divTableHead">Descrição</div>
+                </div>
+                <div class="divTableBody" ng-repeat="metaEspecifica in metaEspecificaList">
+                    <div class="divTableRow">
+                        <div class="divTableCell">{{metaEspecifica.Nome}}</div>
+                        <div class="divTableCell">{{metaEspecifica.NivelMaturidade.Sigla}}</div>
+                        <div class="divTableCell">{{metaEspecifica.NivelMaturidade.Descricao}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <strong>PRÁTICA ESPECÍFICA</strong>
+            <div class="divTable">
+                <div class="divTableHeading">
+                    <div class="divTableHead">Nome</div>
+                    <div class="divTableHead">Sigla</div>
+                    <div class="divTableHead">Descrição</div>
+                </div>
+                <div class="divTableBody" ng-repeat="praticaEspecifica in praticaEspecificaList">
+                    <div class="divTableRow">
+                        <div class="divTableCell">{{praticaEspecifica.Nome}}</div>
+                        <div class="divTableCell">{{praticaEspecifica.Sigla}}</div>
+                        <div class="divTableCell">{{praticaEspecifica.Descricao}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <strong>PRODUTO TRABALHO</strong>
+            <div class="divTable">
+                <div class="divTableHeading">
+                    <div class="divTableHead">Nome</div>
+                    <div class="divTableHead">Template</div>
+                </div>
+                <div class="divTableBody" ng-repeat="praticaEspecifica in praticaEspecificaList">
+                    <div class="divTableRow">
+                        <div class="divTableCell">{{praticaEspecifica.ProdutoTrabalho.Nome}}</div>
+                        <div class="divTableCell">{{praticaEspecifica.ProdutoTrabalho.Template}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-right">Relatório gerado em {{dateOpen | date:'dd/MM/yyyy, HH:mm'}} horas.</div>
+
+    </div>
     <!-- END CONTENT -->
 
 </div>
