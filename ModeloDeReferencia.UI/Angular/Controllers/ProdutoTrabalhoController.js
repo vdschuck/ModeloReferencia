@@ -5,7 +5,8 @@
     $scope.messageError = "";
 
     /* -- GET ALL -- */
-    $scope.GetAll = function (callbackFunction) {
+    $scope.GetAll = function (callbackFunction) {       
+
         var response = ProdutoTrabalhoService.getAll();
         response.then(function (data) {
             $scope.produtoTrabalhoList = angular.copy(data.listProdutoTrabalho);
@@ -68,6 +69,7 @@
     /* -- SAVE -- */
     $scope.Save = function (action, formProdutoTrabalho) {
         if (formProdutoTrabalho.$valid) {
+            $scope.produtoTrabalho.Template = formProdutoTrabalho.file.$$attr.value;
 
             $scope.GetAll(function () {
                 var listLenght = $scope.produtoTrabalhoList.length;
@@ -84,9 +86,7 @@
 
                 if (!exist) {
                     if (!$scope.clikEvent) {
-                        $scope.clikEvent = true;
-
-                       // $scope.Update(formProdutoTrabalho.Template);
+                        $scope.clikEvent = true;                        
 
                         var data = PrepareProdutoTrabalho(action, $scope.produtoTrabalho);
                         var retorno = null;
@@ -167,9 +167,10 @@
             headers: { 'Content-Type': undefined }            
         }).then(function (response) {
             $scope.messageSuccess = "Arquivo salvo com sucesso! ";
+            $scope.fileName = response.data[0];
             console.log(response);
         }, function (response) {
-            $scope.messageError = "";
+            $scope.messageError = "Erro ao tentar gravar o arquivo!";
             console.error('Erro ao tentar gravar o arquivo! ');
         }); 
     };

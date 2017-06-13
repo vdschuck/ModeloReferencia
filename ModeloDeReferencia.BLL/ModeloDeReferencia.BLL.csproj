@@ -51,7 +51,6 @@
     <Compile Include="Interfaces\INivelMaturidadeBLL.cs" />
     <Compile Include="Interfaces\IPraticaEspecificaBLL.cs" />
     <Compile Include="Interfaces\IProdutoTrabalhoBLL.cs" />
-    <Compile Include="Interfaces\ITemplateBLL.cs" />
     <Compile Include="MetaEspecificaBLL.cs" />
     <Compile Include="MetaGenericaBLL.cs" />
     <Compile Include="ModeloBLL.cs" />
@@ -60,7 +59,6 @@
     <Compile Include="ProdutoTrabalhoBLL.cs" />
     <Compile Include="NivelMaturidadeBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TemplateBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ModeloDeReferencia.DAL\ModeloDeReferencia.DAL.csproj">

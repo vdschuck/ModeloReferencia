@@ -151,7 +151,6 @@
     <Compile Include="Controllers\NivelMaturidadeController.cs" />
     <Compile Include="Controllers\PraticaEspecificaController.cs" />
     <Compile Include="Controllers\ProdutoTrabalhoController.cs" />
-    <Compile Include="Controllers\TemplateController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

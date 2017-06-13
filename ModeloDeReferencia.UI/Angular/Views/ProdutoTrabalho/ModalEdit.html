@@ -26,7 +26,7 @@
                         <p class="bg-danger"><i class="fa fa-warning"></i> Este campo é obrigatório</p>
                     </ng-message>
                 </ng-messages>
-                <input type="file" id="file" name="file" class="form-control" onchange="angular.element(this).scope().getTheFiles(this)" ng-disabled="messageSuccess"/>
+                <input type="file" id="file" name="file" value="{{fileName}}" ng-model="produtoTrabalho.Template" class="form-control" onchange="angular.element(this).scope().getTheFiles(this)" ng-disabled="messageSuccess"/>
                 <input type="button" class="btn btn-info btn-sm" ng-click="uploadFiles()" value="UPLOAD" ng-disabled="messageSuccess" />
                 <div data-ng-hide="!messageSuccess">
                     <div class="alert alert-success">{{messageSuccess}}</div>
