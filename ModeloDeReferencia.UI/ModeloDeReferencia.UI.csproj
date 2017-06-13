@@ -161,6 +161,7 @@
     <Content Include="Angular\app.js" />
     <Content Include="Angular\Controllers\AreaProcessoController.js" />
     <Content Include="Angular\Controllers\CategoriaController.js" />
+    <Content Include="Angular\Controllers\FileUpload.js" />
     <Content Include="Angular\Controllers\HomeController.js" />
     <Content Include="Angular\Controllers\MetaEspecificaController.js" />
     <Content Include="Angular\Controllers\MetaGenericaController.js" />
@@ -183,7 +184,6 @@
     <Content Include="Angular\Services\NivelMaturidadeService.js" />
     <Content Include="Angular\Services\PraticaEspecificaService.js" />
     <Content Include="Angular\Services\ProdutoTrabalhoService.js" />
-    <Content Include="Angular\Services\TemplateService.js" />
     <Content Include="Angular\Views\AreaProcesso\Index.html" />
     <Content Include="Angular\Views\AreaProcesso\ModalEdit.html" />
     <Content Include="Angular\Views\Categoria\Index.html" />

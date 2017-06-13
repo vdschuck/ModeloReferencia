@@ -3,9 +3,10 @@ using ModeloDeReferencia.BLL.Interfaces;
 using ModeloDeReferencia.DTO;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Web;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 
 namespace ModeloDeReferencia.UI.Controllers
@@ -49,6 +50,46 @@ namespace ModeloDeReferencia.UI.Controllers
             var request = _produtoTrabalhoBLL.Delete(Id);
 
             return request > 0 ? new HttpStatusCodeResult(HttpStatusCode.OK) : new HttpStatusCodeResult(HttpStatusCode.NotFound);
+        }
+
+
+        [HttpPost]
+        public ActionResult Upload()
+        {
+            System.Web.HttpFileCollection hfc = System.Web.HttpContext.Current.Request.Files;
+
+            int request = 0;
+            string[] data = new string[hfc.Count];
+            string path = System.Web.Hosting.HostingEnvironment.MapPath("~/Content/upload/");
+
+
+            try
+            {    
+                for (int i = 0; i <= hfc.Count - 1; i++)
+                {
+                    System.Web.HttpPostedFile hpf = hfc[i];
+
+                    if (hpf.ContentLength > 0)
+                    {
+                        if (!System.IO.File.Exists(path + Path.GetFileName(hpf.FileName)))
+                        {
+                            hpf.SaveAs(path + Path.GetFileName(hpf.FileName));
+                            data[i] = hpf.FileName;
+                            request += 1;
+                        }
+                        else
+                        {
+                            throw new Exception("Existe um arquivo salvo com o mesmo nome! ");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(ex, JsonRequestBehavior.AllowGet);
+            }
+
+            return data.Length > 0 ? Json(data, JsonRequestBehavior.AllowGet) : Json(HttpStatusCode.Forbidden);
         }
     }
 }

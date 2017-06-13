@@ -29,7 +29,8 @@
             Insert:             'ProdutoTrabalho/Insert',
             Update:             'ProdutoTrabalho/Update',
             Delete:             'ProdutoTrabalho/Delete',
-            GetAllSmallTypes:   'ProdutoTrabalho/GetAllSmallTypes'
+            GetAllSmallTypes:   'ProdutoTrabalho/GetAllSmallTypes',
+            Upload:             'ProdutoTrabalho/Upload'
         },
         MetaEspecifica: {
             GetAll:             'MetaEspecifica/GetAll',
@@ -70,12 +71,7 @@
             Update:             'MetaGenerica/Update',
             Delete:             'MetaGenerica/Delete',
             GetAllSmallTypes:   'MetaGenerica/GetAllSmallTypes'
-        },
-        Template: {           
-            Insert:             'Template/Insert'
-            
-        }
-
+        }   
     };
 
 });

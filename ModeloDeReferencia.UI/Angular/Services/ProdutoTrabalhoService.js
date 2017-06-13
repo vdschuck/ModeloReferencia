@@ -70,6 +70,20 @@
                 });
 
             return deferred.promise;
+        },
+        upload: function (ProdutoTrabalho) {
+            var resource = $resource(Url.ProdutoTrabalho.Insert);
+            var deferred = $q.defer();
+
+            resource.save(ProdutoTrabalho,
+                function (data) {
+                    return deferred.resolve(data);
+                },
+                function (response) {
+                    return deferred.reject(response);
+                });
+
+            return deferred.promise;
         }
     };
 }]);

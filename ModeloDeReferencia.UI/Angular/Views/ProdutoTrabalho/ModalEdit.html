@@ -17,6 +17,7 @@
                 <input type="text" class="form-control" ng-class="{'validation-error' : formProdutoTrabalho.$submitted && !produtoTrabalho.Nome}" name="Nome" ng-model="produtoTrabalho.Nome" required maxlength="100">
             </div>
             <!-- END NOME -->
+
             <!-- TEMPLATE -->
             <div class="col-md-12">
                 <p class="title"><strong>TEMPLATE: *</strong> </p>
@@ -25,7 +26,14 @@
                         <p class="bg-danger"><i class="fa fa-warning"></i> Este campo é obrigatório</p>
                     </ng-message>
                 </ng-messages>
-                <input type="file" class="form-control" name="Template" ng-model="produtoTrabalho.Template">
+                <input type="file" id="file" name="file" class="form-control" onchange="angular.element(this).scope().getTheFiles(this)" ng-disabled="messageSuccess"/>
+                <input type="button" class="btn btn-info btn-sm" ng-click="uploadFiles()" value="UPLOAD" ng-disabled="messageSuccess" />
+                <div data-ng-hide="!messageSuccess">
+                    <div class="alert alert-success">{{messageSuccess}}</div>
+                </div>
+                <div data-ng-hide="!messageError">
+                    <div class="alert alert-danger">{{messageError}}</div>
+                </div>                
             </div>
             <!-- END TEMPLATE -->           
         </div>

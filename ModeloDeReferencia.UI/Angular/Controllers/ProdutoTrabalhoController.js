@@ -1,6 +1,8 @@
-﻿app.controller('ProdutoTrabalhoController', ["$scope", "$filter", "$timeout", "ngDialog", "Url", "ProdutoTrabalhoService", "TemplateService", function ($scope, $filter, $timeout, ngDialog, Url, ProdutoTrabalhoService, TemplateService) {
+﻿app.controller('ProdutoTrabalhoController', ["$scope", "$filter", "$http", "$timeout", "ngDialog", "Url", "ProdutoTrabalhoService",  function ($scope, $filter, $http, $timeout, ngDialog, Url, ProdutoTrabalhoService) {
 
     $scope.produtoTrabalhoList = [];
+    $scope.messageSuccess = "";
+    $scope.messageError = "";
 
     /* -- GET ALL -- */
     $scope.GetAll = function (callbackFunction) {
@@ -147,9 +149,29 @@
         });
     };
 
-    $scope.Update = function (file) {
-       
-        var request = TemplateService.insert(file);
+
+    /* -- UPLOAD FILE -- */
+    var formdata = new FormData();
+    $scope.getTheFiles = function (data) {  
+        if (data.files.length > 0) {
+            formdata.append("key", data.value);
+            formdata.append("arquivo", data.files[0]);
+        }
+    };
+   
+    $scope.uploadFiles = function () {          
+        $http({
+            method: 'POST',
+            url: '/ProdutoTrabalho/upload',
+            data: formdata,
+            headers: { 'Content-Type': undefined }            
+        }).then(function (response) {
+            $scope.messageSuccess = "Arquivo salvo com sucesso! ";
+            console.log(response);
+        }, function (response) {
+            $scope.messageError = "";
+            console.error('Erro ao tentar gravar o arquivo! ');
+        }); 
     };
 
 }]);
