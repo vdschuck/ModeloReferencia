@@ -4,7 +4,7 @@
     <div class="dialog-body">
         <div class="text-center" ng-bind-html="msg"></div>
     </div>
-
+    <br /><br />
     <div class="buttons-modal text-right">
         <button class="btn btn-default" ng-click="closeThisDialog(); callbackCancel();"> CANCELAR</button>
         <button ng-if="representative!=null && !representative.IsTravel" class="btn btn-warning" ng-disabled="desabilitarBotao" ng-click="callbackConfirmation();desabilitarBotao=true;">{{(btnConfirmation) ? 'CONFIRMAR' : 'EXCLUIR'}}</button>

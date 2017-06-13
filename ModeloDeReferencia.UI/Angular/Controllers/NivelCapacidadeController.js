@@ -120,7 +120,7 @@
 
         $scope.callbackConfirmation = function () {
 
-            var retorno = NivelCapacidadeService.delete(praticaEspecifica);
+            var retorno = NivelCapacidadeService.delete(nivelCapacidade);
 
             retorno.then(function (objReturn) {
 
